@@ -1,26 +1,21 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool gameIsPaused = false;
+    public static bool statsOpen = false;
+
+    public Text scoreText;
+    public Text nbBarrier;
+    public Text nbKillMoob;
+
+    public GameObject buttonOption;
+    public GameObject panelStats;
+    public GameObject panelGame;
 
     public GameObject pauseMenuUI;
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (gameIsPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Paused();
-            }
-        }
-    }
 
     void Paused()
     {
@@ -28,6 +23,12 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0;
         gameIsPaused = true;
         Game.instance.GameStop();
+        panelGame.SetActive(false);
+
+        
+        scoreText.text = PlayerHealth.instance.score.ToString();
+        nbBarrier.text = PlayerHealth.instance.nbBarrier.ToString();
+        nbKillMoob.text = PlayerHealth.instance.nbKillMoob.ToString();
     }
 
     public void Resume()
@@ -36,6 +37,23 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         gameIsPaused = false;
         Game.instance.GameStart();
+        panelGame.SetActive(true);
+    }
+
+    public void Stats()
+    {
+        if (statsOpen)
+        {
+            buttonOption.SetActive(true);
+            panelStats.SetActive(false);
+            statsOpen = false;
+        }
+        else
+        {
+            buttonOption.SetActive(false);
+            panelStats.SetActive(true);
+            statsOpen = true;
+        }
     }
 
     public void LoadMainMenu()
@@ -48,13 +66,13 @@ public class PauseMenu : MonoBehaviour
     public void ButtonPause()
     {
         if (gameIsPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Paused();
-            }
+        {
+            Resume();
+        }
+        else
+        {
+            Paused();
+        }
     }
 
     public void ButtonCheat()

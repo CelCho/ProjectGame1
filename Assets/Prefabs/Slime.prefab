@@ -101,6 +101,7 @@ MonoBehaviour:
   maxHealth: 1
   currentHealth: 0
   toDestroy: {fileID: 6260338168205899513}
+  animator: {fileID: 1956485097}
   speed: 0.5
   damageOnCollision: 1
   positions:

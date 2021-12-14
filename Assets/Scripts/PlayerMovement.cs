@@ -17,6 +17,9 @@ public class PlayerMovement : MonoBehaviour
     public Transform waypointsRight;
     public Transform waypointsLeft;
     public Animator animator;
+
+    private Vector3 touchPosition = Vector3.zero;
+    private float horizontalMovement;
     
 
     public static PlayerMovement instance;
@@ -42,9 +45,9 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 targetVelocity = new Vector2(0, speed);
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .05f);
-        if (Input.touchCount == 1) // user is touching the screen with a single touch
+        if (Input.touchCount == 1)
         {
-            Touch touch = Input.GetTouch(0); // get the touchTouch touch = Input.GetTouch(0);
+            Touch touch = Input.GetTouch(0);
             Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
             touchPosition.y = transform.position.y;
             touchPosition.z = 0f;
@@ -52,8 +55,12 @@ public class PlayerMovement : MonoBehaviour
 
             if (touchPosition.x <= waypointsRight.position.x && touchPosition.x >= waypointsLeft.position.x)
             {
-                transform.position = touchPosition;
+                if (-1f < (transform.position.x - touchPosition.x) &&  (transform.position.x - touchPosition.x) < 1f)
+                {
+                    transform.position = touchPosition;                    
+                }
             }
+            
             if (touch.phase == TouchPhase.Began) //check for the first touch
             {
                 fp = touch.position;
@@ -146,6 +153,11 @@ public class PlayerMovement : MonoBehaviour
         }
         speed = CameraWaypoint.instance.speed;
         isNotAttack = true;
+    }
+
+    public void StopVelocity()
+    {
+        rb.velocity = Vector3.zero;
     }
     
     

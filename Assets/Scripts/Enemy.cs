@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -5,6 +7,7 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 1;
     public int currentHealth;
     public GameObject toDestroy; 
+    public Animator animator;
 
     public float speed;
     public int damageOnCollision = 1;
@@ -58,17 +61,18 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        //animator.SetTrigger("Crach");
 
         if (currentHealth <= 0)
         {
-            Die();
+            StartCoroutine(Die());
             return;
         }
     }
 
-    public void Die()
+    public IEnumerator Die()
     {
+        animator.SetTrigger("Die");
+        yield return new WaitForSeconds(1.5f);
         Destroy(toDestroy);
     }
         
@@ -76,7 +80,7 @@ public class Enemy : MonoBehaviour
     {    
         if (collision.CompareTag("GroundCheck"))
         {
-            Die();
+            StartCoroutine(Die());
         }
         
         if (collision.transform.CompareTag("Player"))
@@ -88,7 +92,8 @@ public class Enemy : MonoBehaviour
             }
             else
             {
-                Die();
+                PlayerHealth.instance.nbKillMoob += 1;
+                StartCoroutine(Die());
             }
         }
     }

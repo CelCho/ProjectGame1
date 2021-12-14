@@ -44,6 +44,8 @@ public class Game : MonoBehaviour
         gameIsStart = false;
         startButton.SetActive(false);
         PlayerMovement.instance.animator.ResetTrigger("GameStart");
+        PlayerMovement.instance.StopVelocity();
+        CameraWaypoint.instance.StopVelocity();
         CameraWaypoint.instance.enabled = false;
         PlayerMovement.instance.enabled = false;
     }

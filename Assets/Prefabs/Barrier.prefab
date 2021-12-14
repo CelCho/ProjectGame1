@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: -8735702666293808611, guid: cd3a4c90a0f1bdf439dbd39e9ee6bf81, type: 3}
+  m_Sprite: {fileID: -5620365440426463402, guid: f057129945da3654aadb29d75fad9cfa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,25 +101,19 @@ MonoBehaviour:
   maxHealth: 2
   currentHealth: 2
   positions:
-  - {x: -4.7, y: 7.5, z: 0}
-  - {x: -2.35, y: 7.5, z: 0}
+  - {x: -3.3, y: 7.5, z: 0}
   - {x: 0, y: 7.5, z: 0}
-  - {x: 2.35, y: 7.5, z: 0}
-  - {x: 4.7, y: 7.5, z: 0}
-  - {x: -1.2, y: 3.5, z: 0}
-  - {x: 1.2, y: 3.5, z: 0}
-  - {x: -4.7, y: 0, z: 0}
-  - {x: -2.35, y: 0, z: 0}
+  - {x: 3.3, y: 7.5, z: 0}
+  - {x: -1.7, y: 3.5, z: 0}
+  - {x: 1.7, y: 3.5, z: 0}
+  - {x: -3.3, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
-  - {x: 2.35, y: 0, z: 0}
-  - {x: 4.7, y: 0, z: 0}
-  - {x: -1.2, y: -3.5, z: 0}
-  - {x: 1.2, y: -3.5, z: 0}
-  - {x: -4.7, y: -7.5, z: 0}
-  - {x: -2.35, y: -7.5, z: 0}
+  - {x: 3.3, y: 0, z: 0}
+  - {x: -1.7, y: -3.5, z: 0}
+  - {x: 1.7, y: -3.5, z: 0}
+  - {x: -3.3, y: -7.5, z: 0}
   - {x: 0, y: -7.5, z: 0}
-  - {x: 2.35, y: -7.5, z: 0}
-  - {x: 4.7, y: -7.5, z: 0}
+  - {x: 3.3, y: -7.5, z: 0}
   toDestroy: {fileID: 1085110697426191962}
   box: {fileID: 1085110697426191967}
   animator: {fileID: 1085110697426191960}
@@ -157,18 +151,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.003592372, y: 0.003592372}
+  m_Offset: {x: -0.0151286125, y: -0.010447502}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.375, y: 0.5}
+    oldSize: {x: 3.3125, y: 0.9375}
     newSize: {x: 0.38, y: 0.08}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.3701837, y: 0.48953223}
+  m_Size: {x: 3.3062105, y: 0.9107456}
   m_EdgeRadius: 0
 --- !u!95 &1085110697426191960
 Animator:

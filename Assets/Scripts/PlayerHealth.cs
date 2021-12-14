@@ -7,6 +7,9 @@ public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 2;
     public int currentHealth;
+    public int nbKillMoob;
+    public int nbBarrier;
+
     public float score;
     public Text scoreText;
 
@@ -84,6 +87,7 @@ public class PlayerHealth : MonoBehaviour
         PlayerMovement.instance.rb.velocity = Vector3.zero;
         PlayerMovement.instance.playerCollider.enabled = false;*/
         PlayerMovement.instance.animator.SetTrigger("Die");
+        PlayerMovement.instance.StopVelocity();
         CameraWaypoint.instance.StopVelocity();
         GameOverManager.instance.OnPlayerDeath();
         Game.instance.GameStop();

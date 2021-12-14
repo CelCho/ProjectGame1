@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
@@ -6,6 +7,11 @@ using UnityEngine.SceneManagement;
 public class GameOverManager : MonoBehaviour
 {
     public GameObject gameOverUI;
+    public GameObject panelGame;
+    
+    public Text scoreText;
+    public Text nbBarrier;
+    public Text nbKillMoob;
 
     public static GameOverManager instance;
 
@@ -29,7 +35,12 @@ public class GameOverManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         gameOverUI.SetActive(true);
+        panelGame.SetActive(false);
         Game.instance.GameStop();  
+        
+        scoreText.text = PlayerHealth.instance.score.ToString();
+        nbBarrier.text = PlayerHealth.instance.nbBarrier.ToString();
+        nbKillMoob.text = PlayerHealth.instance.nbKillMoob.ToString();
     }
 
     public void RetryButton()

@@ -26,7 +26,6 @@ public class Barrier : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        //animator.SetTrigger("Crach");
 
         if (currentHealth <= 0)
         {
@@ -52,7 +51,8 @@ public class Barrier : MonoBehaviour
             }
             else
             {
-                Die();
+                PlayerHealth.instance.nbBarrier += 1;
+                animator.SetTrigger("Crach");
             }
         }
         if (collision.CompareTag("GroundCheck"))
