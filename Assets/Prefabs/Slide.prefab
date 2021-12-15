@@ -347,6 +347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrier: {fileID: 1085110697426191962, guid: 3dc6bf39a36dcf247914b69157030ad4, type: 3}
   enemy: {fileID: 6260338168205899513, guid: 072742727cdeccb469c14bd3d3d0ab1d, type: 3}
+  coin: {fileID: 4926852253843087026, guid: bcfce48e453b0794f81f8f0c0fea84e0, type: 3}
   timeToSpawnObject: 2
   rb: {fileID: 6250652720792442873}
 --- !u!1 &6250652720860443620

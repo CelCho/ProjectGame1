@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.IO;
 
 public class Game : MonoBehaviour
 {
@@ -22,6 +24,24 @@ public class Game : MonoBehaviour
         }
 
         instance = this;
+    }
+
+    public void RecupData()
+    {
+        PlayerHealth.instance.coinsCount = PlayerPrefs.GetInt("coinsCount", 0);
+        PlayerHealth.instance.scoreMax = PlayerPrefs.GetFloat("scoreMax", 0);
+        print(PlayerHealth.instance.scoreMax);
+        print(PlayerHealth.instance.coinsCount);
+        PlayerHealth.instance.UpdateTextUI();
+        PauseMenu.instance.UpdateTextUI();
+    }
+
+    public void SaveData()
+    {
+        PlayerPrefs.SetInt("coinsCount", PlayerHealth.instance.coinsCount);
+        PlayerPrefs.SetFloat("scoreMax", PlayerHealth.instance.scoreMax);
+        print(PlayerHealth.instance.scoreMax);
+        print(PlayerHealth.instance.coinsCount);
     }
 
     public void GameStart()

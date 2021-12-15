@@ -7,7 +7,9 @@ public class PauseMenu : MonoBehaviour
     public static bool gameIsPaused = false;
     public static bool statsOpen = false;
 
+    public Text coinsCountText;
     public Text scoreText;
+    public Text scoreMaxText;
     public Text nbBarrier;
     public Text nbKillMoob;
 
@@ -16,17 +18,35 @@ public class PauseMenu : MonoBehaviour
     public GameObject panelGame;
 
     public GameObject pauseMenuUI;
+    
+    public static PauseMenu instance;
 
-    void Paused()
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Il y a plus d'une instance de PauseMenu dans la scene");
+            return;
+        }
+
+        instance = this;
+    }
+    public void Paused()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0;
         gameIsPaused = true;
+        Game.instance.RecupData();
         Game.instance.GameStop();
         panelGame.SetActive(false);
 
-        
+        UpdateTextUI();        
+    }
+    public void UpdateTextUI()
+    {
+        coinsCountText.text = PlayerHealth.instance.coinsCount.ToString();
         scoreText.text = PlayerHealth.instance.score.ToString();
+        scoreMaxText.text = PlayerHealth.instance.scoreMax.ToString();
         nbBarrier.text = PlayerHealth.instance.nbBarrier.ToString();
         nbKillMoob.text = PlayerHealth.instance.nbKillMoob.ToString();
     }

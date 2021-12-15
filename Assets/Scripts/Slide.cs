@@ -6,6 +6,8 @@ public class Slide : MonoBehaviour
 {
     public GameObject barrier;
     public GameObject enemy;
+    public GameObject coin;
+
     public float timeToSpawnObject;
     private bool launchSpeedBool = true;
 
@@ -43,6 +45,8 @@ public class Slide : MonoBehaviour
         {
             CreateEnemy(1);
         }
+
+        CreateCoin(2);
     }
 
     private void Update()
@@ -90,6 +94,14 @@ public class Slide : MonoBehaviour
         for (int i = 0; i < number; i++)
         { 
             GameObject Enemys = (GameObject)Instantiate(enemy, new Vector3(transform.position.x, transform.position.y, -1f), Quaternion.identity);
+        }
+    }
+    
+    public void CreateCoin(int number)
+    {
+        for (int i = 0; i < number; i++)
+        { 
+            GameObject Coins = (GameObject)Instantiate(coin, new Vector3(transform.position.x, transform.position.y, -1f), Quaternion.identity);
         }
     }
 }

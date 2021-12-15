@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\Credits.cs" />
      <Compile Include="Assets\Scripts\Barrier.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\PickUpCoin.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

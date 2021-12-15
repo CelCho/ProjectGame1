@@ -7,11 +7,15 @@ public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 2;
     public int currentHealth;
+
     public int nbKillMoob;
     public int nbBarrier;
 
     public float score;
+    public float scoreMax;
+    public int coinsCount;
     public Text scoreText;
+    public Text coinsCountText;
 
     public Animator heartsAnimator;
     
@@ -90,6 +94,11 @@ public class PlayerHealth : MonoBehaviour
         PlayerMovement.instance.StopVelocity();
         CameraWaypoint.instance.StopVelocity();
         GameOverManager.instance.OnPlayerDeath();
+        if (score > scoreMax)
+        {
+            scoreMax = score;
+        }
+        Game.instance.SaveData();
         Game.instance.GameStop();
     }
 
@@ -126,10 +135,22 @@ public class PlayerHealth : MonoBehaviour
         score =  Mathf.FloorToInt(transform.position.y) + 6;
         UpdateTextUI();
     }
+    
+    public void AddCoins(int count)
+    {
+        coinsCount += count;
+        UpdateTextUI();
+    }
 
+    public void RemoveCoins(int count)
+    {
+        coinsCount -= count;
+        UpdateTextUI();
+    }
     
     public void UpdateTextUI()
     {
         scoreText.text = score.ToString();
+        coinsCountText.text = coinsCount.ToString();
     }
 }
