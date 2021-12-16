@@ -44,11 +44,11 @@ public class PauseMenu : MonoBehaviour
     }
     public void UpdateTextUI()
     {
-        coinsCountText.text = PlayerHealth.instance.coinsCount.ToString();
-        scoreText.text = PlayerHealth.instance.score.ToString();
-        scoreMaxText.text = PlayerHealth.instance.scoreMax.ToString();
-        nbBarrier.text = PlayerHealth.instance.nbBarrier.ToString();
-        nbKillMoob.text = PlayerHealth.instance.nbKillMoob.ToString();
+        coinsCountText.text = Inventory.instance.coinsCount.ToString();
+        scoreText.text = Inventory.instance.score.ToString();
+        scoreMaxText.text = Inventory.instance.scoreMax.ToString();
+        nbBarrier.text = Inventory.instance.nbBarrier.ToString();
+        nbKillMoob.text = Inventory.instance.nbKillMoob.ToString();
     }
 
     public void Resume()
@@ -97,6 +97,6 @@ public class PauseMenu : MonoBehaviour
 
     public void ButtonCheat()
     {
-        PlayerMovement.instance.isNotAttack = false;
+        PlayerMovement.instance.isAttack = true;
     }
 }

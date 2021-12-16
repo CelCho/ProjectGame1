@@ -33,7 +33,7 @@ public class Slide : MonoBehaviour
         if (nbRandom <= 70)
         {
             int nb = 3;
-            if (PlayerHealth.instance.score >= 1000)
+            if (Inventory.instance.score >= 1000)
             {
                 nb = 5;
             }
@@ -54,9 +54,9 @@ public class Slide : MonoBehaviour
         if (Game.instance.gameIsStart)
         {
             launchSpeed();
-            PlayerHealth.instance.addScore(PlayerMovement.instance.speed/10);
+            Inventory.instance.AddScore(PlayerMovement.instance.speed/10);
         }
-        if (PlayerHealth.instance.score >= 5000)
+        if (Inventory.instance.score >= 5000)
         {
             timeToSpawnObject = 1;
         }

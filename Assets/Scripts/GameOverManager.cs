@@ -38,9 +38,9 @@ public class GameOverManager : MonoBehaviour
         panelGame.SetActive(false);
         Game.instance.GameStop();  
         
-        scoreText.text = PlayerHealth.instance.score.ToString();
-        nbBarrier.text = PlayerHealth.instance.nbBarrier.ToString();
-        nbKillMoob.text = PlayerHealth.instance.nbKillMoob.ToString();
+        scoreText.text = Inventory.instance.score.ToString();
+        nbBarrier.text = Inventory.instance.nbBarrier.ToString();
+        nbKillMoob.text = Inventory.instance.nbKillMoob.ToString();
     }
 
     public void RetryButton()

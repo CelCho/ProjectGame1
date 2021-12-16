@@ -28,20 +28,16 @@ public class Game : MonoBehaviour
 
     public void RecupData()
     {
-        PlayerHealth.instance.coinsCount = PlayerPrefs.GetInt("coinsCount", 0);
-        PlayerHealth.instance.scoreMax = PlayerPrefs.GetFloat("scoreMax", 0);
-        print(PlayerHealth.instance.scoreMax);
-        print(PlayerHealth.instance.coinsCount);
-        PlayerHealth.instance.UpdateTextUI();
+        Inventory.instance.coinsCount = PlayerPrefs.GetInt("coinsCount", 0);
+        Inventory.instance.scoreMax = PlayerPrefs.GetFloat("scoreMax", 0);
+        Inventory.instance.UpdateTextUI();
         PauseMenu.instance.UpdateTextUI();
     }
 
     public void SaveData()
     {
-        PlayerPrefs.SetInt("coinsCount", PlayerHealth.instance.coinsCount);
-        PlayerPrefs.SetFloat("scoreMax", PlayerHealth.instance.scoreMax);
-        print(PlayerHealth.instance.scoreMax);
-        print(PlayerHealth.instance.coinsCount);
+        PlayerPrefs.SetInt("coinsCount", Inventory.instance.coinsCount);
+        PlayerPrefs.SetFloat("scoreMax", Inventory.instance.scoreMax);
     }
 
     public void GameStart()
@@ -63,8 +59,8 @@ public class Game : MonoBehaviour
         Text.SetActive(false);
         gameIsStart = false;
         startButton.SetActive(false);
-        PlayerMovement.instance.animator.ResetTrigger("GameStart");
-        PlayerMovement.instance.StopVelocity();
+        SaveData();
+        PlayerMovement.instance.StopPlayer();
         CameraWaypoint.instance.StopVelocity();
         CameraWaypoint.instance.enabled = false;
         PlayerMovement.instance.enabled = false;
@@ -74,6 +70,7 @@ public class Game : MonoBehaviour
     {   
         Text.SetActive(true);
         gameIsStart = true;
+        RecupData();
         PlayerMovement.instance.animator.SetTrigger("GameStart");
         PlayerMovement.instance.enabled = true;
         CameraWaypoint.instance.enabled = true;

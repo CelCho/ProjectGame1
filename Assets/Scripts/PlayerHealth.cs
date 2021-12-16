@@ -8,17 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 2;
     public int currentHealth;
 
-    public int nbKillMoob;
-    public int nbBarrier;
-
-    public float score;
-    public float scoreMax;
-    public int coinsCount;
-    public Text scoreText;
-    public Text coinsCountText;
-
     public Animator heartsAnimator;
-    
 
     public float invincibilityTimeAfterHit = 3f;
     public float invincibilityFlashDelay = 0.2f;
@@ -57,6 +47,7 @@ public class PlayerHealth : MonoBehaviour
         if ((currentHealth + amount) > maxHealth)
         {
             currentHealth = maxHealth;
+            heartsAnimator.ResetTrigger("1life"); 
         }
         else
         {
@@ -69,7 +60,6 @@ public class PlayerHealth : MonoBehaviour
         if (!isInvincible)
         {
             currentHealth -= damage;
-            heartsAnimator.SetTrigger("1life");
 
             if (currentHealth <= 0)
             {
@@ -77,7 +67,7 @@ public class PlayerHealth : MonoBehaviour
                 return;
             }
 
-            PlayerMovement.instance.isNotAttack = false;
+            PlayerMovement.instance.isAttack = true;
             isInvincible = true;
             StartCoroutine(InvincibilityFlash());
             StartCoroutine(HandleInvincibilityDelay());
@@ -91,13 +81,10 @@ public class PlayerHealth : MonoBehaviour
         PlayerMovement.instance.rb.velocity = Vector3.zero;
         PlayerMovement.instance.playerCollider.enabled = false;*/
         PlayerMovement.instance.animator.SetTrigger("Die");
-        PlayerMovement.instance.StopVelocity();
+        PlayerMovement.instance.StopPlayer();
         CameraWaypoint.instance.StopVelocity();
         GameOverManager.instance.OnPlayerDeath();
-        if (score > scoreMax)
-        {
-            scoreMax = score;
-        }
+        Inventory.instance.SaveScoreMax();
         Game.instance.SaveData();
         Game.instance.GameStop();
     }
@@ -125,32 +112,7 @@ public class PlayerHealth : MonoBehaviour
     public IEnumerator HandleInvincibilityDelay()
     {
         yield return new WaitForSeconds(invincibilityTimeAfterHit);
-        PlayerMovement.instance.isNotAttack = true;
+        PlayerMovement.instance.isAttack = false;
         isInvincible = false;
-    }
-
-
-    public void addScore(float amout)
-    {
-        score =  Mathf.FloorToInt(transform.position.y) + 6;
-        UpdateTextUI();
-    }
-    
-    public void AddCoins(int count)
-    {
-        coinsCount += count;
-        UpdateTextUI();
-    }
-
-    public void RemoveCoins(int count)
-    {
-        coinsCount -= count;
-        UpdateTextUI();
-    }
-    
-    public void UpdateTextUI()
-    {
-        scoreText.text = score.ToString();
-        coinsCountText.text = coinsCount.ToString();
     }
 }

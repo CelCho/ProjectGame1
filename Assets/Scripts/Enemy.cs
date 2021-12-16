@@ -85,15 +85,15 @@ public class Enemy : MonoBehaviour
         
         if (collision.transform.CompareTag("Player"))
         {
-            if (PlayerMovement.instance.isNotAttack)
+            if (PlayerMovement.instance.isAttack)
             {
-                PlayerHealth playerHealth = collision.transform.GetComponent<PlayerHealth>();
-                playerHealth.TakeDamage(1);
+                Inventory.instance.nbKillMoob += 1;
+                StartCoroutine(Die());
             }
             else
             {
-                PlayerHealth.instance.nbKillMoob += 1;
-                StartCoroutine(Die());
+                PlayerHealth playerHealth = collision.transform.GetComponent<PlayerHealth>();
+                playerHealth.TakeDamage(1);
             }
         }
     }

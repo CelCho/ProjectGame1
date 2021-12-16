@@ -8,6 +8,7 @@ ScriptsOnlyBuild:
     - Enemy
     - Game
     - GameOverManager
+    - Inventory
     - MainMenu
     - PauseMenu
     - PickUpCoin
@@ -34,8 +35,11 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnimatorStateTransitionInspector
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -82,19 +86,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1524}
     - Class: 114
-      Script: {instanceID: 2258}
+      Script: {instanceID: 2260}
     - Class: 114
-      Script: {instanceID: 2688}
+      Script: {instanceID: 2690}
     - Class: 114
-      Script: {instanceID: 2860}
+      Script: {instanceID: 2862}
     - Class: 114
-      Script: {instanceID: 3096}
+      Script: {instanceID: 3098}
     - Class: 114
-      Script: {instanceID: 3348}
+      Script: {instanceID: 3350}
     - Class: 114
-      Script: {instanceID: 3468}
+      Script: {instanceID: 3470}
     - Class: 114
-      Script: {instanceID: 4714}
+      Script: {instanceID: 4716}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -147,41 +151,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1524}
     - Class: 114
-      Script: {instanceID: 2056}
+      Script: {instanceID: 1660}
     - Class: 114
-      Script: {instanceID: 2094}
+      Script: {instanceID: 2058}
     - Class: 114
-      Script: {instanceID: 2258}
+      Script: {instanceID: 2096}
     - Class: 114
-      Script: {instanceID: 2314}
+      Script: {instanceID: 2260}
     - Class: 114
-      Script: {instanceID: 2424}
+      Script: {instanceID: 2316}
     - Class: 114
-      Script: {instanceID: 2688}
+      Script: {instanceID: 2426}
     - Class: 114
-      Script: {instanceID: 2860}
+      Script: {instanceID: 2690}
     - Class: 114
-      Script: {instanceID: 3096}
+      Script: {instanceID: 2862}
     - Class: 114
-      Script: {instanceID: 3160}
+      Script: {instanceID: 3098}
     - Class: 114
-      Script: {instanceID: 3254}
+      Script: {instanceID: 3162}
     - Class: 114
-      Script: {instanceID: 3294}
+      Script: {instanceID: 3256}
     - Class: 114
-      Script: {instanceID: 3348}
+      Script: {instanceID: 3296}
     - Class: 114
-      Script: {instanceID: 3468}
+      Script: {instanceID: 3350}
     - Class: 114
-      Script: {instanceID: 4360}
+      Script: {instanceID: 3470}
     - Class: 114
-      Script: {instanceID: 4634}
+      Script: {instanceID: 4362}
     - Class: 114
-      Script: {instanceID: 5044}
+      Script: {instanceID: 4636}
     - Class: 114
-      Script: {instanceID: 5368}
+      Script: {instanceID: 5046}
     - Class: 114
-      Script: {instanceID: 21852}
+      Script: {instanceID: 5370}
+    - Class: 114
+      Script: {instanceID: 57070}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -222,31 +228,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1646}
     - Class: 114
-      Script: {instanceID: 1720}
+      Script: {instanceID: 1722}
     - Class: 114
-      Script: {instanceID: 1778}
+      Script: {instanceID: 1780}
     - Class: 114
-      Script: {instanceID: 2258}
+      Script: {instanceID: 2260}
     - Class: 114
-      Script: {instanceID: 2628}
+      Script: {instanceID: 2630}
     - Class: 114
-      Script: {instanceID: 2688}
+      Script: {instanceID: 2690}
     - Class: 114
-      Script: {instanceID: 2860}
+      Script: {instanceID: 2862}
     - Class: 114
-      Script: {instanceID: 3096}
+      Script: {instanceID: 3098}
     - Class: 114
-      Script: {instanceID: 3348}
+      Script: {instanceID: 3350}
     - Class: 114
-      Script: {instanceID: 3360}
+      Script: {instanceID: 3362}
     - Class: 114
-      Script: {instanceID: 3468}
+      Script: {instanceID: 3470}
     - Class: 114
-      Script: {instanceID: 4304}
+      Script: {instanceID: 4306}
     - Class: 114
-      Script: {instanceID: 4528}
+      Script: {instanceID: 4530}
     - Class: 114
-      Script: {instanceID: 4738}
+      Script: {instanceID: 4740}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -300,6 +306,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Toggle
+  - hash:
+      serializedVersion: 2
+      Hash: 41535be6dcdb96d9de9674e274ccc07e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PickUpCoin
   - hash:
       serializedVersion: 2
       Hash: 59ce5902048c1041729c804e2772b2ce
@@ -518,7 +530,7 @@ ScriptsOnlyBuild:
     className: CameraFollow
   - hash:
       serializedVersion: 2
-      Hash: 253e9c4d69039e18a227db6c94536f2c
+      Hash: c516fc3d4929ebf9b64c87aa5e840529
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerHealth
@@ -818,7 +830,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 5f50ba3a0a9dd479950a2b6b97de6673
+      Hash: 8c59818c3425df023835c988c9c80d8a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
@@ -860,10 +872,10 @@ ScriptsOnlyBuild:
     className: FabrikSolver2D
   - hash:
       serializedVersion: 2
-      Hash: 41535be6dcdb96d9de9674e274ccc07e
+      Hash: de621cf01f96a1c9026c4e1397c703b5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: PickUpCoin
+    className: Inventory
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainMenu.unity

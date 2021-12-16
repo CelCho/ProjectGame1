@@ -22,7 +22,7 @@ public class PickUpCoin : MonoBehaviour
         }
         if (collision.CompareTag("Player"))
         {
-            PlayerHealth.instance.AddCoins(1);
+            Inventory.instance.AddCoins(1);
             //CurrentSceneManager.instance.coinsPickedUpInThisSceneCount++;
             Destroy(gameObject);
         }

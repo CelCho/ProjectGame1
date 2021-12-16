@@ -1144,7 +1144,7 @@ GameObject:
   - component: {fileID: 367038926}
   - component: {fileID: 367038925}
   m_Layer: 5
-  m_Name: Text
+  m_Name: nbKillText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1655,7 +1655,7 @@ GameObject:
   - component: {fileID: 431792642}
   - component: {fileID: 431792641}
   m_Layer: 5
-  m_Name: Text
+  m_Name: nbBarrierText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2059,7 +2059,7 @@ GameObject:
   - component: {fileID: 501956290}
   - component: {fileID: 501956289}
   m_Layer: 5
-  m_Name: Text
+  m_Name: nbBonusText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2719,7 +2719,7 @@ GameObject:
   - component: {fileID: 684080878}
   - component: {fileID: 684080877}
   m_Layer: 5
-  m_Name: TextScore
+  m_Name: TextScoreMax
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2798,7 +2798,7 @@ GameObject:
   - component: {fileID: 742255865}
   - component: {fileID: 742255864}
   m_Layer: 5
-  m_Name: Text
+  m_Name: nbMoobText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3248,7 +3248,7 @@ GameObject:
   - component: {fileID: 846630937}
   - component: {fileID: 846630936}
   m_Layer: 5
-  m_Name: NbNoob
+  m_Name: NbMoob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3982,7 +3982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraWaypoint: {fileID: 1415559392}
-  timeOffset: 0.2
+  timeOffset: 0
   posOffset: {x: 0, y: 3, z: -10}
   anPosPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1056468878
@@ -4497,12 +4497,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  lateralSpeed: 1
-  rb: {fileID: 1398834225}
-  isNotAttack: 1
+  horizontalSpeed: 0.2
+  rigidbodyPlayer: {fileID: 1398834225}
+  isAttack: 0
+  animator: {fileID: 1398834226}
   waypointsRight: {fileID: 1739059869}
   waypointsLeft: {fileID: 1862382800}
-  animator: {fileID: 1398834226}
 --- !u!114 &1398834224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4517,13 +4517,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 2
   currentHealth: 0
-  nbKillMoob: 0
-  nbBarrier: 0
-  score: 0
-  scoreMax: 0
-  coinsCount: 0
-  scoreText: {fileID: 410591770}
-  coinsCountText: {fileID: 917138304}
   heartsAnimator: {fileID: 2121956188}
   invincibilityTimeAfterHit: 1.5
   invincibilityFlashDelay: 0.2
@@ -5405,6 +5398,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1700007145}
+  - component: {fileID: 1700007148}
   - component: {fileID: 1700007147}
   - component: {fileID: 1700007144}
   - component: {fileID: 1700007146}
@@ -5444,7 +5438,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700007143}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -54.019836, y: 1425.9437, z: -119.40067}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5484,6 +5478,26 @@ MonoBehaviour:
   scoreText: {fileID: 233711152}
   nbBarrier: {fileID: 581505015}
   nbKillMoob: {fileID: 488374538}
+--- !u!114 &1700007148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700007143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380bad9e94a6fd54aa926fd99c6f15a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nbKillMoob: 0
+  nbBarrier: 0
+  score: 0
+  scoreMax: 0
+  coinsCount: 0
+  coinsCountTotal: 0
+  scoreText: {fileID: 410591770}
+  coinsCountText: {fileID: 917138304}
 --- !u!1 &1702104855
 GameObject:
   m_ObjectHideFlags: 0
