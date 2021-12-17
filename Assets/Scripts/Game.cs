@@ -11,6 +11,7 @@ public class Game : MonoBehaviour
     public GameObject Text;
     public GameObject startButton;
 
+    private bool launchSpeedBool = true;
     public bool gameIsStart = false;
 
     public static Game instance;
@@ -70,10 +71,30 @@ public class Game : MonoBehaviour
         Text.SetActive(true);
         gameIsStart = true;
         RecupData();
+        launchSpeed();
         PlayerMovement.instance.animator.SetTrigger("GameStart");
         PlayerMovement.instance.enabled = true;
         CameraWaypoint.instance.enabled = true;
         StartCoroutine(DeleteSlideStart());  
+    }
+
+    private void launchSpeed()
+    {
+        if (launchSpeedBool)
+        {
+            StartCoroutine(speedUpgrade());
+            launchSpeedBool = false;
+        }
+    }
+
+    public IEnumerator speedUpgrade()
+    {
+        while (true && Game.instance.gameIsStart && CameraWaypoint.instance.speed <= 30)
+        {
+            yield return new WaitForSeconds(10f);
+            PlayerMovement.instance.speed += 0.5f;
+            CameraWaypoint.instance.speed += 0.5f;
+        }
     }
 
     public void CreateSlide(Vector3 positions)
@@ -83,7 +104,10 @@ public class Game : MonoBehaviour
 
     public IEnumerator DeleteSlideStart()
     {
-        yield return new WaitForSeconds(10f);
+        while (PlayerMovement.instance.transform.position.y < 30)
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
         Destroy(slideStart);
     }
 }

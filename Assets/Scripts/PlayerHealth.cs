@@ -50,7 +50,6 @@ public class PlayerHealth : MonoBehaviour
     public void BonusHeartsPlayer()
     {
         currentHealth = 3;
-
     }
 
     public void HealPlayer(int amount)

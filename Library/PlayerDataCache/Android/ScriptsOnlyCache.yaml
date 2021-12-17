@@ -9,9 +9,12 @@ ScriptsOnlyBuild:
     - Game
     - GameOverManager
     - Inventory
+    - Item
     - MainMenu
     - PauseMenu
     - PickUpCoin
+    - PickUpItem
+    - PlayerEffects
     - PlayerHealth
     - PlayerMovement
     - SettingsMenu
@@ -187,6 +190,12 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5048}
     - Class: 114
       Script: {instanceID: 5372}
+    - Class: 114
+      Script: {instanceID: 34056}
+    - Class: 114
+      Script: {instanceID: 34088}
+    - Class: 114
+      Script: {instanceID: 36080}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -361,13 +370,13 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: df0e724998ee8e630d7cc8ed461ac413
+      Hash: 0ce4f947796e6fa1e9adfd53e78c7651
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PauseMenu
   - hash:
       serializedVersion: 2
-      Hash: 879480a2f2c8a0fc656960d48e296dc5
+      Hash: 1ae5fc4ce44c010a71c58be07d5c8649
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Slide
@@ -439,7 +448,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: de621cf01f96a1c9026c4e1397c703b5
+      Hash: 46091ea30217781a8c67e172655bcb13
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Inventory
@@ -875,6 +884,24 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: 08a7a5b178e56a9de0d8de6efe894f1b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Item
+  - hash:
+      serializedVersion: 2
+      Hash: 10f053cde1ff187da281830a9f39dbbb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PickUpItem
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerEffects
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainMenu.unity

@@ -7,9 +7,10 @@ public class Slide : MonoBehaviour
     public GameObject barrier;
     public GameObject enemy;
     public GameObject coin;
+    public GameObject apple;
+    public GameObject goldenApple;
 
     public float timeToSpawnObject;
-    private bool launchSpeedBool = true;
 
     public Rigidbody2D rb;
     
@@ -45,39 +46,27 @@ public class Slide : MonoBehaviour
         {
             CreateEnemy(1);
         }
-
-        CreateCoin(2);
+        nbRandom = Random.Range(0, 101);
+        if (nbRandom >= 85)
+        {
+            CreateApple(1, goldenApple);
+        }
+        else if (nbRandom <= 50)
+        {
+            CreateApple(1, apple);
+        }
+        CreateCoin(1);
     }
 
     private void Update()
     {
         if (Game.instance.gameIsStart)
         {
-            launchSpeed();
             Inventory.instance.AddScore(PlayerMovement.instance.speed/10);
         }
         if (Inventory.instance.score >= 5000)
         {
             timeToSpawnObject = 1;
-        }
-    }
-
-    private void launchSpeed()
-    {
-        if (launchSpeedBool)
-        {
-            StartCoroutine(speedUpgrade());
-            launchSpeedBool = false;
-        }
-    }
-
-    public IEnumerator speedUpgrade()
-    {
-        while (true && Game.instance.gameIsStart && CameraWaypoint.instance.speed <= 30)
-        {
-            yield return new WaitForSeconds(10f);
-            PlayerMovement.instance.speed += 0.5f;
-            CameraWaypoint.instance.speed += 0.5f;
         }
     }
 
@@ -102,6 +91,14 @@ public class Slide : MonoBehaviour
         for (int i = 0; i < number; i++)
         { 
             GameObject Coins = (GameObject)Instantiate(coin, new Vector3(transform.position.x, transform.position.y, -1f), Quaternion.identity);
+        }
+    }    
+    
+    public void CreateApple(int number, GameObject Apple)
+    {
+        for (int i = 0; i < number; i++)
+        { 
+            GameObject Apples = (GameObject)Instantiate(Apple, new Vector3(transform.position.x, transform.position.y + 4, -1f), Quaternion.identity);
         }
     }
 }

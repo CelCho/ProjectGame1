@@ -35,13 +35,13 @@ public class PauseMenu : MonoBehaviour
 
     public void Paused()
     {
-        heartsMenuAnimator.SetInteger("CurrentHealth", PlayerHealth.instance.currentHealth); 
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0;
         gameIsPaused = true;
         Game.instance.RecupData();
         Game.instance.GameStop();
         panelGame.SetActive(false);
+        heartsMenuAnimator.SetInteger("CurrentHealth", PlayerHealth.instance.currentHealth); 
 
         UpdateTextUI();        
     }
