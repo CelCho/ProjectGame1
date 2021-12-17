@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4926852253843087033}
   - component: {fileID: 4926852253843087038}
+  - component: {fileID: 4926852253843087037}
   - component: {fileID: 4926852253843087039}
   - component: {fileID: 4926852253843087036}
-  - component: {fileID: 4926852253843087037}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -85,6 +85,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4926852253843087037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4926852253843087026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e0800480e0120f4cb672768ff8dd3fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toDestroy: {fileID: 4926852253843087026}
+  positions:
+  - {x: -3, y: 4.7, z: 0}
+  - {x: 3, y: 2.7, z: 0}
+  - {x: -3, y: -2.7, z: 0}
+  - {x: 3, y: -4.7, z: 0}
 --- !u!95 &4926852253843087039
 Animator:
   serializedVersion: 3
@@ -95,7 +113,7 @@ Animator:
   m_GameObject: {fileID: 4926852253843087026}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 29cd58219df5e854399029f00186c7e7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -120,21 +138,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.00000047683716}
   serializedVersion: 2
   m_Radius: 0.26162672
---- !u!114 &4926852253843087037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4926852253843087026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e0800480e0120f4cb672768ff8dd3fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toDestroy: {fileID: 4926852253843087026}
-  positions:
-  - {x: -3, y: 4.7, z: 0}
-  - {x: 3, y: 2.7, z: 0}
-  - {x: -3, y: -2.7, z: 0}
-  - {x: 3, y: -4.7, z: 0}

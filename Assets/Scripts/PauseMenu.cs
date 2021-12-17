@@ -13,6 +13,7 @@ public class PauseMenu : MonoBehaviour
     public Text nbBarrier;
     public Text nbKillMoob;
 
+    public Animator heartsMenuAnimator;
     public GameObject buttonOption;
     public GameObject panelStats;
     public GameObject panelGame;
@@ -31,8 +32,10 @@ public class PauseMenu : MonoBehaviour
 
         instance = this;
     }
+
     public void Paused()
     {
+        heartsMenuAnimator.SetInteger("CurrentHealth", PlayerHealth.instance.currentHealth); 
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0;
         gameIsPaused = true;
@@ -41,14 +44,6 @@ public class PauseMenu : MonoBehaviour
         panelGame.SetActive(false);
 
         UpdateTextUI();        
-    }
-    public void UpdateTextUI()
-    {
-        coinsCountText.text = Inventory.instance.coinsCount.ToString();
-        scoreText.text = Inventory.instance.score.ToString();
-        scoreMaxText.text = Inventory.instance.scoreMax.ToString();
-        nbBarrier.text = Inventory.instance.nbBarrier.ToString();
-        nbKillMoob.text = Inventory.instance.nbKillMoob.ToString();
     }
 
     public void Resume()
@@ -60,6 +55,14 @@ public class PauseMenu : MonoBehaviour
         panelGame.SetActive(true);
     }
 
+    public void UpdateTextUI()
+    {
+        coinsCountText.text = Inventory.instance.coinsCount.ToString();
+        scoreText.text = Inventory.instance.score.ToString();
+        scoreMaxText.text = Inventory.instance.scoreMax.ToString();
+        nbBarrier.text = Inventory.instance.nbBarrier.ToString();
+        nbKillMoob.text = Inventory.instance.nbKillMoob.ToString();
+    }
     public void Stats()
     {
         if (statsOpen)

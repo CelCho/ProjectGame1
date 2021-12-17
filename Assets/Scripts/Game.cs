@@ -49,15 +49,14 @@ public class Game : MonoBehaviour
         else
         {
             startButton.SetActive(true);
+            gameIsStart = true;
         }
-        
         
     }
     
     public void GameStop()
     {
         Text.SetActive(false);
-        gameIsStart = false;
         startButton.SetActive(false);
         SaveData();
         PlayerMovement.instance.StopPlayer();

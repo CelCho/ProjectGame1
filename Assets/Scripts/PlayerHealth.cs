@@ -36,10 +36,21 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
+        heartsAnimator.SetInteger("CurrentHealth", currentHealth); 
         if (Input.GetKeyDown(KeyCode.H))
         {
             TakeDamage(1);
         }
+        else if (Input.GetKeyDown(KeyCode.B))
+        {
+            BonusHeartsPlayer();
+        }
+    }
+
+    public void BonusHeartsPlayer()
+    {
+        currentHealth = 3;
+
     }
 
     public void HealPlayer(int amount)
@@ -47,7 +58,6 @@ public class PlayerHealth : MonoBehaviour
         if ((currentHealth + amount) > maxHealth)
         {
             currentHealth = maxHealth;
-            heartsAnimator.ResetTrigger("1life"); 
         }
         else
         {

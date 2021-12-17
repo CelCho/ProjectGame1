@@ -56,11 +56,19 @@ public class PlayerMovement : MonoBehaviour
             touchPosition.y = transform.position.y;
             touchPosition.z = 0f;
             Vector3 dir = touchPosition - transform.position;
-
-            if ((dir.x < 0 && transform.position.x >= waypointsLeft.position.x) | (dir.x > 0 && transform.position.x <= waypointsRight.position.x))
+            if (dir.x > 0.3f | dir.x < -0.3f)
             {
-                transform.Translate(dir.normalized * horizontalSpeed, Space.World);
+                if ((dir.x < 0 && transform.position.x >= waypointsLeft.position.x) | (dir.x > 0 && transform.position.x <= waypointsRight.position.x))
+                {
+                    if (dir.x <= 1 && dir.x >= -1)
+                    {
+                        horizontalSpeed = 0.05f;
+                    }
+                    transform.Translate(dir.normalized * horizontalSpeed, Space.World);
+                    horizontalSpeed = 0.1f;
+                }   
             }
+            
 
             if(t.phase == TouchPhase.Began)
             {
