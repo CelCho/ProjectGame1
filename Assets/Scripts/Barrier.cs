@@ -52,7 +52,7 @@ public class Barrier : MonoBehaviour
             {
                 PlayerHealth playerHealth = collision.transform.GetComponent<PlayerHealth>();
                 playerHealth.TakeDamage(1);
-                StartCoroutine(BoxEnabled());
+                box.enabled = false;
             }
         }
         if (collision.CompareTag("GroundCheck"))
@@ -60,11 +60,9 @@ public class Barrier : MonoBehaviour
             Die();
         }
     }
-    
-    public IEnumerator BoxEnabled()
+
+    private void OnTriggerExit2D(Collider2D other) 
     {
-        box.enabled = false;
-        yield return new WaitForSeconds(1);
         box.enabled = true;
     }
 }

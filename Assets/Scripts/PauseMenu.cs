@@ -12,6 +12,7 @@ public class PauseMenu : MonoBehaviour
     public Text scoreMaxText;
     public Text nbBarrier;
     public Text nbKillMoob;
+    public Text nbBonus;
 
     public Animator heartsMenuAnimator;
     public GameObject buttonOption;
@@ -62,6 +63,7 @@ public class PauseMenu : MonoBehaviour
         scoreMaxText.text = Inventory.instance.scoreMax.ToString();
         nbBarrier.text = Inventory.instance.nbBarrier.ToString();
         nbKillMoob.text = Inventory.instance.nbKillMoob.ToString();
+        nbBonus.text = Inventory.instance.nbBonus.ToString();
     }
     public void Stats()
     {

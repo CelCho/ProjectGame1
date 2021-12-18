@@ -20,12 +20,6 @@ public class Slide : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null)
-        {
-            //Debug.LogWarning("Il y a plus d'une instance de Slide dans la scene");
-            return;
-        }
-
         instance = this;
     }
     private void Start() 
