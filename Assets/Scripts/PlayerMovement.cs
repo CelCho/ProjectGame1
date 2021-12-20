@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
 
     public bool isAttack = false;
+    public bool canAttack = true;
     public Animator animator;
 
     public Transform waypointsRight;
@@ -62,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     if (dir.x <= 1 && dir.x >= -1)
                     {
-                        horizontalSpeed = 0.05f;
+                        horizontalSpeed = 0.1f;
                     }
                     transform.Translate(dir.normalized * horizontalSpeed, Space.World);
                     horizontalSpeed = 0.1f;
@@ -89,13 +90,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Attack()
+    public void Attack()
     {
-        if (!isAttack)
+        if (canAttack)
         {
             Debug.Log("Attack");
             StartCoroutine(AttackSpeed());
-            isAttack = true;            
+            isAttack = true;
+            canAttack = false;
         }
     }
     
@@ -107,13 +109,14 @@ public class PlayerMovement : MonoBehaviour
         {
             yield return new WaitForSeconds(0.001f);
         }
-        speed = -1;
+        speed = -Aspeed;
         while (transform.position.y >= CameraWaypoint.instance.transform.position.y)
         {
             yield return new WaitForSeconds(0.001f);
         }
         speed = CameraWaypoint.instance.speed;
         isAttack = false;
+        canAttack = true;
     }
 
     public void StopPlayer()

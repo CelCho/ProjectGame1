@@ -45,7 +45,6 @@ public class Barrier : MonoBehaviour
             {
                 PlayerHealth playerHealth = collision.transform.GetComponent<PlayerHealth>();
                 playerHealth.TakeDamage(1);
-                box.enabled = false;
             }
         }
         if (collision.CompareTag("GroundCheck"))
@@ -54,8 +53,13 @@ public class Barrier : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other) 
+    private IEnumerator BoxEnabled() 
     {
+        box.enabled = false;
+        while (transform.position.y + 3 >= PlayerMovement.instance.transform.position.y)
+        {
+             yield return new WaitForSeconds(0.01f);
+        }
         box.enabled = true;
     }
 }

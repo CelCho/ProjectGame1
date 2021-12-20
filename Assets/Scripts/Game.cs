@@ -11,6 +11,7 @@ public class Game : MonoBehaviour
 
     private bool launchSpeedBool = true;
     public bool gameIsStart = false;
+    private int nbRandom;
 
     public static Game instance;
 
@@ -23,6 +24,14 @@ public class Game : MonoBehaviour
         }
 
         instance = this;
+    }
+    
+    private void Update()
+    {
+        if (gameIsStart)
+        {
+            Inventory.instance.AddScore();
+        }
     }
 
     public void RecupData()
@@ -84,7 +93,7 @@ public class Game : MonoBehaviour
 
     public IEnumerator speedUpgrade()
     {
-        while (true && Game.instance.gameIsStart && CameraWaypoint.instance.speed <= 30)
+        while (true && Game.instance.gameIsStart && CameraWaypoint.instance.speed <= 7)
         {
             yield return new WaitForSeconds(10f);
             PlayerMovement.instance.speed += 0.5f;
@@ -94,7 +103,11 @@ public class Game : MonoBehaviour
 
     public void CreateSlide(Vector3 positions)
     {
-        int nbRandom = Random.Range(0, slides.Length);
+        int antNbRandom = nbRandom;
+        while (antNbRandom == nbRandom)
+        {
+            nbRandom = Random.Range(0, slides.Length); 
+        }
         GameObject slide = (GameObject)Instantiate(slides[nbRandom], new Vector3(positions.x, positions.y + 24, -1f), Quaternion.identity);
     }
 }

@@ -57,7 +57,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void AddScore(float amout)
+    public void AddScore()
     {
         score =  Mathf.FloorToInt(PlayerHealth.instance.transform.position.y) + 6;
         UpdateTextUI();
