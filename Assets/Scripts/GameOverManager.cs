@@ -8,10 +8,12 @@ public class GameOverManager : MonoBehaviour
 {
     public GameObject gameOverUI;
     public GameObject panelGame;
+    public Animator animator;
     
     public Text scoreText;
     public Text nbBarrier;
     public Text nbKillMoob;
+    public Text nbBonus;
 
     public static GameOverManager instance;
 
@@ -28,12 +30,13 @@ public class GameOverManager : MonoBehaviour
 
     public void OnPlayerDeath()
     {
+        animator.SetTrigger("FadeIn");
         StartCoroutine(Wait());      
     }
     
     public IEnumerator Wait()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         gameOverUI.SetActive(true);
         panelGame.SetActive(false);
         Game.instance.GameStop();  
@@ -41,11 +44,11 @@ public class GameOverManager : MonoBehaviour
         scoreText.text = Inventory.instance.score.ToString();
         nbBarrier.text = Inventory.instance.nbBarrier.ToString();
         nbKillMoob.text = Inventory.instance.nbKillMoob.ToString();
+        nbBonus.text = Inventory.instance.nbBonus.ToString();
     }
 
     public void RetryButton()
     {
-        //Inventory.instance.RemoveCoins(CurrentSceneManager.instance.coinsPickedUpInThisSceneCount);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         PlayerHealth.instance.Respawn();
         Game.instance.GameStart();

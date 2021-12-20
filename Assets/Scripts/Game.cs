@@ -6,9 +6,7 @@ using System.IO;
 
 public class Game : MonoBehaviour
 {
-    public GameObject slide;
-    public GameObject slideStart;
-    public GameObject Text;
+    public GameObject[] slides;
     public GameObject startButton;
 
     private bool launchSpeedBool = true;
@@ -57,7 +55,6 @@ public class Game : MonoBehaviour
     
     public void GameStop()
     {
-        Text.SetActive(false);
         startButton.SetActive(false);
         SaveData();
         PlayerMovement.instance.StopPlayer();
@@ -67,15 +64,13 @@ public class Game : MonoBehaviour
     }
 
     public void ButtonStart()
-    {   
-        Text.SetActive(true);
+    {
         gameIsStart = true;
         RecupData();
         launchSpeed();
         PlayerMovement.instance.animator.SetTrigger("GameStart");
         PlayerMovement.instance.enabled = true;
         CameraWaypoint.instance.enabled = true;
-        StartCoroutine(DeleteSlideStart());  
     }
 
     private void launchSpeed()
@@ -99,15 +94,7 @@ public class Game : MonoBehaviour
 
     public void CreateSlide(Vector3 positions)
     {
-        GameObject slides = (GameObject)Instantiate(slide, new Vector3(positions.x, positions.y + 24, -1f), Quaternion.identity);
-    }
-
-    public IEnumerator DeleteSlideStart()
-    {
-        while (PlayerMovement.instance.transform.position.y < 30)
-        {
-            yield return new WaitForSeconds(0.1f);
-        }
-        Destroy(slideStart);
+        int nbRandom = Random.Range(0, slides.Length);
+        GameObject slide = (GameObject)Instantiate(slides[nbRandom], new Vector3(positions.x, positions.y + 24, -1f), Quaternion.identity);
     }
 }

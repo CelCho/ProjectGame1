@@ -53,6 +53,7 @@
 		<type fullname="CameraWaypoint" preserve="nothing"/>
 		<type fullname="Credits" preserve="nothing"/>
 		<type fullname="Enemy" preserve="nothing"/>
+		<type fullname="EnvironmentFixe" preserve="nothing"/>
 		<type fullname="Game" preserve="nothing"/>
 		<type fullname="GameOverManager" preserve="nothing"/>
 		<type fullname="Inventory" preserve="nothing"/>

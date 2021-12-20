@@ -7,6 +7,7 @@ public class Inventory : MonoBehaviour
 {
     public int nbKillMoob;
     public int nbBarrier;
+    public int nbBonus;
 
     public float score;
     public float scoreMax;
@@ -36,7 +37,7 @@ public class Inventory : MonoBehaviour
         {
             PlayerHealth.instance.BonusHeartsPlayer();
         }
-        else if (true)
+        else
         {
             PlayerHealth.instance.HealPlayer(currentItem.hpGiven);
         }
@@ -45,6 +46,7 @@ public class Inventory : MonoBehaviour
         {
             StartCoroutine(playerEffects.InvinsiblePlayer(currentItem.timeInvinsible));
         }
+        nbBonus += 1;
     }
 
     public void SaveScoreMax()

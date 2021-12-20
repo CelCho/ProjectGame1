@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6260338168205899515}
   - component: {fileID: 6260338168205899517}
   - component: {fileID: 6260338168205899518}
-  - component: {fileID: 6260338168205899514}
+  - component: {fileID: 4080442905473143445}
   - component: {fileID: 1956485097}
   m_Layer: 0
   m_Name: Slime
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   currentHealth: 0
+  box: {fileID: 4080442905473143445}
   toDestroy: {fileID: 6260338168205899513}
   animator: {fileID: 1956485097}
   speed: 0.5
@@ -131,8 +132,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!70 &6260338168205899514
-CapsuleCollider2D:
+--- !u!58 &4080442905473143445
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -140,13 +141,13 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 6260338168205899513}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: e47f97e2fce879c489c2776ebbce9dc9, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.04334259, y: -0.09737182}
-  m_Size: {x: 0.8954191, y: 0.9921899}
-  m_Direction: 0
+  m_Offset: {x: 0.0000019073486, y: -0.17799664}
+  serializedVersion: 2
+  m_Radius: 0.46078682
 --- !u!95 &1956485097
 Animator:
   serializedVersion: 3

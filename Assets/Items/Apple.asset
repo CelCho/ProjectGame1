@@ -17,6 +17,7 @@ MonoBehaviour:
   description: give 1 heart
   price: 50
   image: {fileID: 7293598183456022363, guid: 2e0dcfd29422c0741878e3bf00cdbc6e, type: 3}
+  animator: {fileID: 1505505844, guid: 1e14f57d9eaafd54a9a887bca84d5bc0, type: 3}
   hpGiven: 1
   timeInvinsible: 0
   timeEffect: 0

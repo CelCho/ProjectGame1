@@ -6,8 +6,6 @@ public class Barrier : MonoBehaviour
 {
     public int maxHealth = 1;
     public int currentHealth;
-    
-    public Vector3[] positions;
 
     public GameObject toDestroy;
     public BoxCollider2D box;
@@ -16,11 +14,6 @@ public class Barrier : MonoBehaviour
     public void Start()
     {
         currentHealth = maxHealth;
-        float posY = transform.position.y;
-        int nbRandom = Random.Range(0, positions.Length);
-        Vector3 positionActual = positions[nbRandom];
-        positionActual.y += posY;
-        transform.position = positionActual;
     }
 
     public void TakeDamage(int damage)
@@ -52,7 +45,7 @@ public class Barrier : MonoBehaviour
             {
                 PlayerHealth playerHealth = collision.transform.GetComponent<PlayerHealth>();
                 playerHealth.TakeDamage(1);
-                StartCoroutine(BoxEnabled());
+                box.enabled = false;
             }
         }
         if (collision.CompareTag("GroundCheck"))
@@ -60,11 +53,9 @@ public class Barrier : MonoBehaviour
             Die();
         }
     }
-    
-    public IEnumerator BoxEnabled()
+
+    private void OnTriggerExit2D(Collider2D other) 
     {
-        box.enabled = false;
-        yield return new WaitForSeconds(1);
         box.enabled = true;
     }
 }

@@ -8,6 +8,7 @@ public class Item : ScriptableObject
     public string description;
     public int price;
     public Sprite image;
+    public Animator animator;
     public int hpGiven;
     public float timeInvinsible;
     public float timeEffect;

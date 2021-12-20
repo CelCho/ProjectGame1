@@ -6,6 +6,7 @@ ScriptsOnlyBuild:
     - CameraWaypoint
     - Credits
     - Enemy
+    - EnvironmentFixe
     - Game
     - GameOverManager
     - Inventory
@@ -187,6 +188,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5458}
     - Class: 114
       Script: {instanceID: 5464}
+    - Class: 114
+      Script: {instanceID: 25154}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -307,7 +310,7 @@ ScriptsOnlyBuild:
     className: Toggle
   - hash:
       serializedVersion: 2
-      Hash: 41535be6dcdb96d9de9674e274ccc07e
+      Hash: 9538ec7fdaf8886a70771bae45aff503
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PickUpCoin
@@ -361,13 +364,13 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: 0ce4f947796e6fa1e9adfd53e78c7651
+      Hash: f4e8e9a9e36892e21bca9c5ca20678d1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PauseMenu
   - hash:
       serializedVersion: 2
-      Hash: 1ae5fc4ce44c010a71c58be07d5c8649
+      Hash: 9c2738990a6d87b1e79667954fb54cd7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Slide
@@ -409,7 +412,7 @@ ScriptsOnlyBuild:
     className: CinemachinePixelPerfect
   - hash:
       serializedVersion: 2
-      Hash: c3d65329693d4ba22e56ca27293072a8
+      Hash: 473b8aea2a5858520e27a3b870ad0a8c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameOverManager
@@ -439,7 +442,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 46091ea30217781a8c67e172655bcb13
+      Hash: 42ae06954ccad86e520447ec037db6ee
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Inventory
@@ -511,7 +514,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: b46cf4149db33f92c0f825ceafe19a6d
+      Hash: a6ff2ae2dcbf55b3d2f4ea508955ffa4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy
@@ -637,7 +640,7 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
-      Hash: 10f053cde1ff187da281830a9f39dbbb
+      Hash: a6b05ae09ae6240bd970cb1e97cc488e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PickUpItem
@@ -739,7 +742,7 @@ ScriptsOnlyBuild:
     className: SpriteShapeGeometryCache
   - hash:
       serializedVersion: 2
-      Hash: 423e779f424f3a047c4b0471ba809dc6
+      Hash: 6e66e2b170d584aadce1cc35fbc8cbb0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Game
@@ -811,7 +814,7 @@ ScriptsOnlyBuild:
     className: SpriteSkinEntity
   - hash:
       serializedVersion: 2
-      Hash: d03ba677107d965d59835c97dde561c8
+      Hash: 53a9ca5ac8c9d0e4a4be9d3a06942ac3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Barrier
@@ -853,7 +856,7 @@ ScriptsOnlyBuild:
     className: PlayerMovement
   - hash:
       serializedVersion: 2
-      Hash: 08a7a5b178e56a9de0d8de6efe894f1b
+      Hash: 42bf2e12d7f0dd50bda596816cf44885
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Item
@@ -893,9 +896,15 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: 385f70f4bf49fe6efef767320e48ff62
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnvironmentFixe
   platform: 9
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Level01.unity
   - Assets/Scenes/Credits.unity
-  playerPath: /Users/matlecher/Desktop/dffg
+  playerPath: /Users/matlecher/Desktop/dc
