@@ -6,6 +6,7 @@ ScriptsOnlyBuild:
     - CameraWaypoint
     - Credits
     - Enemy
+    - EnvironmentFixe
     - Game
     - GameOverManager
     - Inventory
@@ -86,21 +87,21 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1524}
+      Script: {instanceID: 1526}
     - Class: 114
-      Script: {instanceID: 2260}
+      Script: {instanceID: 2262}
     - Class: 114
-      Script: {instanceID: 2690}
+      Script: {instanceID: 2692}
     - Class: 114
-      Script: {instanceID: 2864}
+      Script: {instanceID: 2866}
     - Class: 114
-      Script: {instanceID: 3100}
+      Script: {instanceID: 3102}
     - Class: 114
-      Script: {instanceID: 3354}
+      Script: {instanceID: 3356}
     - Class: 114
-      Script: {instanceID: 3474}
+      Script: {instanceID: 3478}
     - Class: 114
-      Script: {instanceID: 4722}
+      Script: {instanceID: 4726}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -151,51 +152,53 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1524}
+      Script: {instanceID: 1526}
     - Class: 114
-      Script: {instanceID: 1660}
+      Script: {instanceID: 1662}
     - Class: 114
-      Script: {instanceID: 2058}
+      Script: {instanceID: 2060}
     - Class: 114
-      Script: {instanceID: 2096}
+      Script: {instanceID: 2098}
     - Class: 114
-      Script: {instanceID: 2260}
+      Script: {instanceID: 2262}
     - Class: 114
-      Script: {instanceID: 2316}
+      Script: {instanceID: 2318}
     - Class: 114
-      Script: {instanceID: 2426}
+      Script: {instanceID: 2428}
     - Class: 114
-      Script: {instanceID: 2690}
+      Script: {instanceID: 2692}
     - Class: 114
-      Script: {instanceID: 2744}
+      Script: {instanceID: 2746}
     - Class: 114
-      Script: {instanceID: 2864}
+      Script: {instanceID: 2866}
     - Class: 114
-      Script: {instanceID: 3100}
+      Script: {instanceID: 3102}
     - Class: 114
-      Script: {instanceID: 3164}
+      Script: {instanceID: 3166}
     - Class: 114
-      Script: {instanceID: 3258}
+      Script: {instanceID: 3260}
     - Class: 114
-      Script: {instanceID: 3280}
+      Script: {instanceID: 3282}
     - Class: 114
-      Script: {instanceID: 3300}
+      Script: {instanceID: 3302}
     - Class: 114
-      Script: {instanceID: 3354}
+      Script: {instanceID: 3356}
     - Class: 114
-      Script: {instanceID: 3474}
+      Script: {instanceID: 3388}
     - Class: 114
-      Script: {instanceID: 3976}
+      Script: {instanceID: 3478}
     - Class: 114
-      Script: {instanceID: 4368}
+      Script: {instanceID: 3980}
     - Class: 114
-      Script: {instanceID: 4642}
+      Script: {instanceID: 4372}
     - Class: 114
-      Script: {instanceID: 5052}
+      Script: {instanceID: 4646}
     - Class: 114
-      Script: {instanceID: 5376}
+      Script: {instanceID: 5056}
     - Class: 114
-      Script: {instanceID: 5382}
+      Script: {instanceID: 5380}
+    - Class: 114
+      Script: {instanceID: 5386}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -232,35 +235,35 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1524}
+      Script: {instanceID: 1526}
     - Class: 114
-      Script: {instanceID: 1646}
+      Script: {instanceID: 1648}
     - Class: 114
-      Script: {instanceID: 1722}
+      Script: {instanceID: 1724}
     - Class: 114
-      Script: {instanceID: 1780}
+      Script: {instanceID: 1782}
     - Class: 114
-      Script: {instanceID: 2260}
+      Script: {instanceID: 2262}
     - Class: 114
-      Script: {instanceID: 2630}
+      Script: {instanceID: 2632}
     - Class: 114
-      Script: {instanceID: 2690}
+      Script: {instanceID: 2692}
     - Class: 114
-      Script: {instanceID: 2864}
+      Script: {instanceID: 2866}
     - Class: 114
-      Script: {instanceID: 3100}
+      Script: {instanceID: 3102}
     - Class: 114
-      Script: {instanceID: 3354}
+      Script: {instanceID: 3356}
     - Class: 114
-      Script: {instanceID: 3366}
+      Script: {instanceID: 3368}
     - Class: 114
-      Script: {instanceID: 3474}
+      Script: {instanceID: 3478}
     - Class: 114
-      Script: {instanceID: 4312}
+      Script: {instanceID: 4316}
     - Class: 114
-      Script: {instanceID: 4536}
+      Script: {instanceID: 4540}
     - Class: 114
-      Script: {instanceID: 4746}
+      Script: {instanceID: 4750}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -316,7 +319,7 @@ ScriptsOnlyBuild:
     className: Toggle
   - hash:
       serializedVersion: 2
-      Hash: 41535be6dcdb96d9de9674e274ccc07e
+      Hash: 9538ec7fdaf8886a70771bae45aff503
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PickUpCoin
@@ -376,7 +379,7 @@ ScriptsOnlyBuild:
     className: PauseMenu
   - hash:
       serializedVersion: 2
-      Hash: 1ae5fc4ce44c010a71c58be07d5c8649
+      Hash: 9c2738990a6d87b1e79667954fb54cd7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Slide
@@ -574,6 +577,12 @@ ScriptsOnlyBuild:
     className: TMP_SubMesh
   - hash:
       serializedVersion: 2
+      Hash: 385f70f4bf49fe6efef767320e48ff62
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnvironmentFixe
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -646,7 +655,7 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
-      Hash: 10f053cde1ff187da281830a9f39dbbb
+      Hash: a6b05ae09ae6240bd970cb1e97cc488e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PickUpItem
@@ -748,7 +757,7 @@ ScriptsOnlyBuild:
     className: SpriteShapeGeometryCache
   - hash:
       serializedVersion: 2
-      Hash: 423e779f424f3a047c4b0471ba809dc6
+      Hash: 6e66e2b170d584aadce1cc35fbc8cbb0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Game
@@ -820,7 +829,7 @@ ScriptsOnlyBuild:
     className: SpriteSkinEntity
   - hash:
       serializedVersion: 2
-      Hash: d03ba677107d965d59835c97dde561c8
+      Hash: 53a9ca5ac8c9d0e4a4be9d3a06942ac3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Barrier
@@ -862,7 +871,7 @@ ScriptsOnlyBuild:
     className: PlayerMovement
   - hash:
       serializedVersion: 2
-      Hash: 08a7a5b178e56a9de0d8de6efe894f1b
+      Hash: 42bf2e12d7f0dd50bda596816cf44885
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Item
@@ -908,4 +917,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Level01.unity
   - Assets/Scenes/Credits.unity
   playerPath: C:/Users/Celian/Desktop/Jeux en dev/Jeux/GitHub/ProjectGame1 V1.2+/ProjectGame1/Build/Android/ProjectGame1
-    V1.3.apk
+    V1.4.apk

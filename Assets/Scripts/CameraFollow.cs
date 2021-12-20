@@ -36,5 +36,5 @@ public class CameraFollow : MonoBehaviour
             transform.position = Vector3.SmoothDamp(transform.position, cameraWaypoint.transform.position + posOffset, ref velocity, timeOffset);
             anPosPlayer.x = PlayerMovement.instance.transform.position.x;
         }
-        }
+    }
 }

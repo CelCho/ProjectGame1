@@ -28,12 +28,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        float posY = transform.position.y;
         target = PlayerMovement.instance.transform;
-        int nbRandom = Random.Range(0, positions.Length);
-        Vector3 positionActual = positions[nbRandom];
-        positionActual.y += posY;
-        transform.position = positionActual;
     }
 
     void Update()

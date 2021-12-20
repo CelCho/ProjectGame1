@@ -17,6 +17,7 @@ MonoBehaviour:
   description: Golden Apple
   price: 150
   image: {fileID: -3510762909219705522, guid: 0739e18c07699214f941f0ca52f5a5cd, type: 3}
+  animator: {fileID: 819991931221743157, guid: 48e7b2af685f9754c9424f739045d92d, type: 3}
   hpGiven: 0
   timeInvinsible: 10
   timeEffect: 0

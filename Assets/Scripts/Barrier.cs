@@ -6,8 +6,6 @@ public class Barrier : MonoBehaviour
 {
     public int maxHealth = 1;
     public int currentHealth;
-    
-    public Vector3[] positions;
 
     public GameObject toDestroy;
     public BoxCollider2D box;
@@ -16,11 +14,6 @@ public class Barrier : MonoBehaviour
     public void Start()
     {
         currentHealth = maxHealth;
-        float posY = transform.position.y;
-        int nbRandom = Random.Range(0, positions.Length);
-        Vector3 positionActual = positions[nbRandom];
-        positionActual.y += posY;
-        transform.position = positionActual;
     }
 
     public void TakeDamage(int damage)

@@ -103,5 +103,9 @@ public class PauseMenu : MonoBehaviour
     public void ButtonCheat()
     {
         PlayerMovement.instance.isAttack = true;
+        PlayerHealth.instance.isInvincible = true;
+        Vector3 pos = PlayerMovement.instance.transform.position;
+        pos.x = 10f;
+        PlayerMovement.instance.transform.position = pos;
     }
 }
