@@ -75,7 +75,7 @@ namespace Unity { class Cloth; }
 class Collider2D; template <> void RegisterUnityClass<Collider2D>(const char*);
 class BoxCollider2D; template <> void RegisterUnityClass<BoxCollider2D>(const char*);
 class CapsuleCollider2D; template <> void RegisterUnityClass<CapsuleCollider2D>(const char*);
-class CircleCollider2D; 
+class CircleCollider2D; template <> void RegisterUnityClass<CircleCollider2D>(const char*);
 class CompositeCollider2D; 
 class EdgeCollider2D; 
 class PolygonCollider2D; 
@@ -279,7 +279,7 @@ void RegisterAllClasses()
 {
 void RegisterBuiltinTypes();
 RegisterBuiltinTypes();
-	//Total: 73 non stripped classes
+	//Total: 74 non stripped classes
 	//0. AnimationClip
 	RegisterUnityClass<AnimationClip>("Animation");
 	//1. Animator
@@ -410,21 +410,23 @@ RegisterBuiltinTypes();
 	RegisterUnityClass<BoxCollider2D>("Physics2D");
 	//64. CapsuleCollider2D
 	RegisterUnityClass<CapsuleCollider2D>("Physics2D");
-	//65. Collider2D
+	//65. CircleCollider2D
+	RegisterUnityClass<CircleCollider2D>("Physics2D");
+	//66. Collider2D
 	RegisterUnityClass<Collider2D>("Physics2D");
-	//66. Physics2DSettings
+	//67. Physics2DSettings
 	RegisterUnityClass<Physics2DSettings>("Physics2D");
-	//67. PhysicsMaterial2D
+	//68. PhysicsMaterial2D
 	RegisterUnityClass<PhysicsMaterial2D>("Physics2D");
-	//68. Rigidbody2D
+	//69. Rigidbody2D
 	RegisterUnityClass<Rigidbody2D>("Physics2D");
-	//69. TextRendering::Font
+	//70. TextRendering::Font
 	RegisterUnityClass<TextRendering::Font>("TextRendering");
-	//70. UI::Canvas
+	//71. UI::Canvas
 	RegisterUnityClass<UI::Canvas>("UI");
-	//71. UI::CanvasGroup
+	//72. UI::CanvasGroup
 	RegisterUnityClass<UI::CanvasGroup>("UI");
-	//72. UI::CanvasRenderer
+	//73. UI::CanvasRenderer
 	RegisterUnityClass<UI::CanvasRenderer>("UI");
 
 }
