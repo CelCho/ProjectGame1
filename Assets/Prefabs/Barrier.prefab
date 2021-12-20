@@ -100,20 +100,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 2
   currentHealth: 2
-  positions:
-  - {x: -3.3, y: 7.5, z: 0}
-  - {x: 0, y: 7.5, z: 0}
-  - {x: 3.3, y: 7.5, z: 0}
-  - {x: -1.7, y: 3.5, z: 0}
-  - {x: 1.7, y: 3.5, z: 0}
-  - {x: -3.3, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 3.3, y: 0, z: 0}
-  - {x: -1.7, y: -3.5, z: 0}
-  - {x: 1.7, y: -3.5, z: 0}
-  - {x: -3.3, y: -7.5, z: 0}
-  - {x: 0, y: -7.5, z: 0}
-  - {x: 3.3, y: -7.5, z: 0}
   toDestroy: {fileID: 1085110697426191962}
   box: {fileID: 1085110697426191967}
   animator: {fileID: 1085110697426191960}

@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6260338168205899515}
   - component: {fileID: 6260338168205899517}
   - component: {fileID: 6260338168205899518}
-  - component: {fileID: 4080442905473143445}
   - component: {fileID: 1956485097}
+  - component: {fileID: 7749074818571816575}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Enemy
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6260338168205899513}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -46.4, y: 26.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,16 +100,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   currentHealth: 0
-  box: {fileID: 4080442905473143445}
+  box: {fileID: 7749074818571816575}
   toDestroy: {fileID: 6260338168205899513}
   animator: {fileID: 1956485097}
   speed: 0.5
   damageOnCollision: 1
   positions:
-  - {x: -4.7, y: -1.5, z: 0}
-  - {x: 4.7, y: -1.5, z: 0}
-  - {x: -4.7, y: 1.5, z: 0}
-  - {x: 4.7, y: 1.5, z: 0}
+  - {x: 0, y: 0, z: 0}
   graphics: {fileID: 6260338168205899515}
 --- !u!50 &6260338168205899518
 Rigidbody2D:
@@ -123,7 +120,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -132,22 +129,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!58 &4080442905473143445
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6260338168205899513}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0000019073486, y: -0.17799664}
-  serializedVersion: 2
-  m_Radius: 0.46078682
 --- !u!95 &1956485097
 Animator:
   serializedVersion: 3
@@ -167,3 +148,41 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!60 &7749074818571816575
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6260338168205899513}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.125, y: 1.125}
+    newSize: {x: 8, y: 8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.31014633, y: 0.06299782}
+      - {x: 0.18642807, y: 0.12345123}
+      - {x: 0.17966843, y: 0.123708725}
+      - {x: -0.1767044, y: 0.116256714}
+      - {x: -0.3091545, y: 0.06371689}
+      - {x: -0.36841583, y: 0.0028057098}
+      - {x: -0.4352455, y: -0.13454247}
+      - {x: -0.4395523, y: -0.382452}
+      - {x: -0.37788773, y: -0.4321022}
+      - {x: 0.3824501, y: -0.44327927}
+      - {x: 0.44327927, y: -0.3770542}
+      - {x: 0.4395523, y: -0.125}
+      - {x: 0.37416458, y: -0.0033435822}

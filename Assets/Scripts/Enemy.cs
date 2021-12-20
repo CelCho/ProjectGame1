@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public int maxHealth = 1;
     public int currentHealth;
-    public CircleCollider2D box;
+    public PolygonCollider2D box;
     public GameObject toDestroy;
     public Animator animator;
 

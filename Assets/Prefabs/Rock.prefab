@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6704451997849195422}
   - component: {fileID: 6704451997849195423}
   - component: {fileID: 6704451997849195392}
-  - component: {fileID: 6704451997849195393}
   - component: {fileID: 6704451997849195421}
   - component: {fileID: 6704451997849195420}
+  - component: {fileID: 2502032801802771408}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Untagged
@@ -107,32 +107,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!61 &6704451997849195393
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6704451997849195394}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.625, y: 1.3125}
-    newSize: {x: 1.625, y: 1.3125}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.625, y: 1.3125}
-  m_EdgeRadius: 0
 --- !u!114 &6704451997849195421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,3 +140,38 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!60 &2502032801802771408
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6704451997849195394}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.625, y: 1.3125}
+    newSize: {x: 1.625, y: 1.3125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.063659295, y: 0.646819}
+      - {x: -0.49064723, y: 0.64681894}
+      - {x: -0.8125, y: 0.33439726}
+      - {x: -0.81454605, y: 0.037862238}
+      - {x: -0.744028, y: -0.1522805}
+      - {x: -0.5295696, y: -0.55722445}
+      - {x: 0.21736448, y: -0.5731266}
+      - {x: 0.7040434, y: -0.3591732}
+      - {x: 0.7087589, y: -0.04299964}
+      - {x: 0.7156366, y: -0.046360195}

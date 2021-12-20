@@ -4,49 +4,49 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 4659288243647866406
-    second: Sprite_objects_5
+    second: Grass1
   - first:
       213: 442747272099593096
-    second: Sprite_objects_14
+    second: Rock
   - first:
       213: -1312584603328547728
-    second: Sprite_objects_15
+    second: RockSmall
   - first:
       213: -6505506094584488014
-    second: Sprite_objects_16
+    second: Tree
   - first:
       213: 3265381819596405047
-    second: Sprite_objects_26
+    second: Grass2
   - first:
       213: 3952719735272518247
-    second: Sprite_objects_30
+    second: Grass4
   - first:
       213: -18221850860227031
-    second: Sprite_objects_31
+    second: RockComposite
   - first:
       213: 3121131317921652892
-    second: Sprite_objects_32
+    second: Barrier
   - first:
       213: 1885038574046849922
-    second: Sprite_objects_33
+    second: WallDiagLeft
   - first:
       213: 8524240485628725923
-    second: Sprite_objects_34
+    second: WallDiagRight
   - first:
       213: -7103982834872825474
-    second: Sprite_objects_35
+    second: WallVertical
   - first:
       213: -2434293019898522183
-    second: Sprite_objects_36
+    second: WallHorizontal
   - first:
       213: -2268841216720640595
-    second: Sprite_objects_37
+    second: WallCircle
   - first:
       213: -5292043501380302800
-    second: Sprite_objects_0
+    second: Grass3
   - first:
       213: 7751623360170982062
-    second: Sprite_objects_1
+    second: Grass5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -160,7 +160,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite_objects_5
+      name: Grass1
       rect:
         serializedVersion: 2
         x: 0
@@ -168,7 +168,7 @@ TextureImporter:
         width: 47
         height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,7 +181,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_objects_14
+      name: Rock
       rect:
         serializedVersion: 2
         x: 99
@@ -189,7 +189,7 @@ TextureImporter:
         width: 26
         height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,7 +202,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_objects_15
+      name: RockSmall
       rect:
         serializedVersion: 2
         x: 135
@@ -210,7 +210,7 @@ TextureImporter:
         width: 18
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -223,7 +223,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_objects_16
+      name: Tree
       rect:
         serializedVersion: 2
         x: 161
@@ -231,7 +231,7 @@ TextureImporter:
         width: 30
         height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -244,7 +244,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_objects_26
+      name: Grass2
       rect:
         serializedVersion: 2
         x: 47
@@ -252,7 +252,7 @@ TextureImporter:
         width: 47
         height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -265,7 +265,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_objects_30
+      name: Grass4
       rect:
         serializedVersion: 2
         x: 227
@@ -273,7 +273,7 @@ TextureImporter:
         width: 29
         height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -286,7 +286,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_objects_31
+      name: RockComposite
       rect:
         serializedVersion: 2
         x: 5
@@ -294,7 +294,7 @@ TextureImporter:
         width: 25
         height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -307,7 +307,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_objects_32
+      name: Barrier
       rect:
         serializedVersion: 2
         x: 70
@@ -315,7 +315,7 @@ TextureImporter:
         width: 53
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -328,7 +328,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_objects_33
+      name: WallDiagLeft
       rect:
         serializedVersion: 2
         x: 3
@@ -336,7 +336,7 @@ TextureImporter:
         width: 48
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -349,7 +349,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_objects_34
+      name: WallDiagRight
       rect:
         serializedVersion: 2
         x: 105
@@ -357,7 +357,7 @@ TextureImporter:
         width: 43
         height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -370,7 +370,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_objects_35
+      name: WallVertical
       rect:
         serializedVersion: 2
         x: 163
@@ -378,7 +378,7 @@ TextureImporter:
         width: 26
         height: 58
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -391,7 +391,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_objects_36
+      name: WallHorizontal
       rect:
         serializedVersion: 2
         x: 195
@@ -399,7 +399,7 @@ TextureImporter:
         width: 59
         height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -412,7 +412,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_objects_37
+      name: WallCircle
       rect:
         serializedVersion: 2
         x: 202
@@ -420,7 +420,7 @@ TextureImporter:
         width: 44
         height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -433,7 +433,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_objects_0
+      name: Grass3
       rect:
         serializedVersion: 2
         x: 221
@@ -441,7 +441,7 @@ TextureImporter:
         width: 35
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -454,7 +454,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_objects_1
+      name: Grass5
       rect:
         serializedVersion: 2
         x: 209
@@ -462,7 +462,7 @@ TextureImporter:
         width: 10
         height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

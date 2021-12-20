@@ -6,6 +6,7 @@ public class PickUpItem : MonoBehaviour
     public Item apple;
     public Item goldenApple;
     public Item item;
+    public Item shield;
 
     public Vector3[] positions;
 
@@ -15,12 +16,16 @@ public class PickUpItem : MonoBehaviour
     private void Start() 
     {
         int nbRandom = Random.Range(0, 101);
-        if (nbRandom <= 50)
+        if (nbRandom <= 45)
         {
             item = apple;
 
         }
-        else if (nbRandom > 50)
+        else if (nbRandom <= 80)
+        {
+            item = shield;
+        }
+        else if (nbRandom > 80)
         {
             item = goldenApple;
         }

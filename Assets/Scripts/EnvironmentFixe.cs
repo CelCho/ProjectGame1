@@ -7,14 +7,6 @@ public class EnvironmentFixe : MonoBehaviour
     public GameObject toDestroy;
     public Animator animator;
 
-
-    public void PlayerKill()
-    {
-        animator.SetTrigger("Crach");   
-        PlayerHealth.instance.Die();
-
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {    
         if (collision.CompareTag("GroundCheck"))
@@ -24,7 +16,8 @@ public class EnvironmentFixe : MonoBehaviour
         
         if (collision.transform.CompareTag("Player") && ! PlayerHealth.instance.isInvincible)
         {
-            PlayerKill();
+            animator.SetTrigger("Crach");   
+            PlayerHealth.instance.TakeDamage(1);
         }
     }
 }
