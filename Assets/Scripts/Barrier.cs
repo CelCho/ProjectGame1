@@ -43,16 +43,16 @@ public class Barrier : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player"))
         {
-            if (PlayerMovement.instance.isNotAttack)
+            if (PlayerMovement.instance.isAttack)
+            {
+                Inventory.instance.nbBarrier += 1;
+                animator.SetTrigger("Crach");
+            }
+            else
             {
                 PlayerHealth playerHealth = collision.transform.GetComponent<PlayerHealth>();
                 playerHealth.TakeDamage(1);
                 StartCoroutine(BoxEnabled());
-            }
-            else
-            {
-                PlayerHealth.instance.nbBarrier += 1;
-                animator.SetTrigger("Crach");
             }
         }
         if (collision.CompareTag("GroundCheck"))

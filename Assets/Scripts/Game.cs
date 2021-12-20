@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.IO;
 
 public class Game : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class Game : MonoBehaviour
     public GameObject Text;
     public GameObject startButton;
 
+    private bool launchSpeedBool = true;
     public bool gameIsStart = false;
 
     public static Game instance;
@@ -24,6 +27,20 @@ public class Game : MonoBehaviour
         instance = this;
     }
 
+    public void RecupData()
+    {
+        Inventory.instance.coinsCount = PlayerPrefs.GetInt("coinsCount", 0);
+        Inventory.instance.scoreMax = PlayerPrefs.GetFloat("scoreMax", 0);
+        Inventory.instance.UpdateTextUI();
+        PauseMenu.instance.UpdateTextUI();
+    }
+
+    public void SaveData()
+    {
+        PlayerPrefs.SetInt("coinsCount", Inventory.instance.coinsCount);
+        PlayerPrefs.SetFloat("scoreMax", Inventory.instance.scoreMax);
+    }
+
     public void GameStart()
     {
         if (gameIsStart)
@@ -33,18 +50,17 @@ public class Game : MonoBehaviour
         else
         {
             startButton.SetActive(true);
+            gameIsStart = true;
         }
-        
         
     }
     
     public void GameStop()
     {
         Text.SetActive(false);
-        gameIsStart = false;
         startButton.SetActive(false);
-        PlayerMovement.instance.animator.ResetTrigger("GameStart");
-        PlayerMovement.instance.StopVelocity();
+        SaveData();
+        PlayerMovement.instance.StopPlayer();
         CameraWaypoint.instance.StopVelocity();
         CameraWaypoint.instance.enabled = false;
         PlayerMovement.instance.enabled = false;
@@ -54,10 +70,31 @@ public class Game : MonoBehaviour
     {   
         Text.SetActive(true);
         gameIsStart = true;
+        RecupData();
+        launchSpeed();
         PlayerMovement.instance.animator.SetTrigger("GameStart");
         PlayerMovement.instance.enabled = true;
         CameraWaypoint.instance.enabled = true;
         StartCoroutine(DeleteSlideStart());  
+    }
+
+    private void launchSpeed()
+    {
+        if (launchSpeedBool)
+        {
+            StartCoroutine(speedUpgrade());
+            launchSpeedBool = false;
+        }
+    }
+
+    public IEnumerator speedUpgrade()
+    {
+        while (true && Game.instance.gameIsStart && CameraWaypoint.instance.speed <= 30)
+        {
+            yield return new WaitForSeconds(10f);
+            PlayerMovement.instance.speed += 0.5f;
+            CameraWaypoint.instance.speed += 0.5f;
+        }
     }
 
     public void CreateSlide(Vector3 positions)
@@ -67,7 +104,10 @@ public class Game : MonoBehaviour
 
     public IEnumerator DeleteSlideStart()
     {
-        yield return new WaitForSeconds(10f);
+        while (PlayerMovement.instance.transform.position.y < 30)
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
         Destroy(slideStart);
     }
 }

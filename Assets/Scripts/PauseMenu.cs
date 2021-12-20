@@ -7,28 +7,43 @@ public class PauseMenu : MonoBehaviour
     public static bool gameIsPaused = false;
     public static bool statsOpen = false;
 
+    public Text coinsCountText;
     public Text scoreText;
+    public Text scoreMaxText;
     public Text nbBarrier;
     public Text nbKillMoob;
 
+    public Animator heartsMenuAnimator;
     public GameObject buttonOption;
     public GameObject panelStats;
     public GameObject panelGame;
 
     public GameObject pauseMenuUI;
+    
+    public static PauseMenu instance;
 
-    void Paused()
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Il y a plus d'une instance de PauseMenu dans la scene");
+            return;
+        }
+
+        instance = this;
+    }
+
+    public void Paused()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0;
         gameIsPaused = true;
+        Game.instance.RecupData();
         Game.instance.GameStop();
         panelGame.SetActive(false);
+        heartsMenuAnimator.SetInteger("CurrentHealth", PlayerHealth.instance.currentHealth); 
 
-        
-        scoreText.text = PlayerHealth.instance.score.ToString();
-        nbBarrier.text = PlayerHealth.instance.nbBarrier.ToString();
-        nbKillMoob.text = PlayerHealth.instance.nbKillMoob.ToString();
+        UpdateTextUI();        
     }
 
     public void Resume()
@@ -40,6 +55,14 @@ public class PauseMenu : MonoBehaviour
         panelGame.SetActive(true);
     }
 
+    public void UpdateTextUI()
+    {
+        coinsCountText.text = Inventory.instance.coinsCount.ToString();
+        scoreText.text = Inventory.instance.score.ToString();
+        scoreMaxText.text = Inventory.instance.scoreMax.ToString();
+        nbBarrier.text = Inventory.instance.nbBarrier.ToString();
+        nbKillMoob.text = Inventory.instance.nbKillMoob.ToString();
+    }
     public void Stats()
     {
         if (statsOpen)
@@ -77,6 +100,6 @@ public class PauseMenu : MonoBehaviour
 
     public void ButtonCheat()
     {
-        PlayerMovement.instance.isNotAttack = false;
+        PlayerMovement.instance.isAttack = true;
     }
 }

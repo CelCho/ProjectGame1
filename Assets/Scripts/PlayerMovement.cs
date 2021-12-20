@@ -5,22 +5,21 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
-    public float lateralSpeed = 1;
-    public Rigidbody2D rb;
-    public bool isNotAttack = true;
+    public float horizontalSpeed;
+    public Rigidbody2D rigidbodyPlayer;
     private Vector3 velocity = Vector3.zero;
-    
-    private Vector3 fp;
-    private Vector3 lp;
-    private float dragDistance;
+
+    public bool isAttack = false;
+    public Animator animator;
 
     public Transform waypointsRight;
     public Transform waypointsLeft;
-    public Animator animator;
 
-    private Vector3 touchPosition = Vector3.zero;
-    private float horizontalMovement;
-    
+    private int direction;
+    private float dragDistance;
+    private Vector2 firstPressPos;
+    private Vector2 secondPressPos;
+    private Vector2 currentSwipe;
 
     public static PlayerMovement instance;
 
@@ -35,148 +34,91 @@ public class PlayerMovement : MonoBehaviour
         instance = this;
     }
     
- 
-    void Start()
+    private void Start()
     {
         dragDistance = Screen.height * 15 / 100;
     }
- 
-    void Update()
+
+    private void Update() 
     {
         Vector3 targetVelocity = new Vector2(0, speed);
-        rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .05f);
-        if (Input.touchCount == 1)
+        rigidbodyPlayer.velocity = Vector3.SmoothDamp(rigidbodyPlayer.velocity, targetVelocity, ref velocity, .05f);
+
+        Movement();
+    }
+ 
+    public void Movement()
+    {
+        if(Input.touches.Length > 0)
         {
-            Touch touch = Input.GetTouch(0);
-            Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+            Touch t = Input.GetTouch(0);
+            Vector3 touchPosition = Camera.main.ScreenToWorldPoint(t.position);
             touchPosition.y = transform.position.y;
             touchPosition.z = 0f;
-
-
-            if (touchPosition.x <= waypointsRight.position.x && touchPosition.x >= waypointsLeft.position.x)
+            Vector3 dir = touchPosition - transform.position;
+            if (dir.x > 0.3f | dir.x < -0.3f)
             {
-                if (-1f < (transform.position.x - touchPosition.x) &&  (transform.position.x - touchPosition.x) < 1f)
+                if ((dir.x < 0 && transform.position.x >= waypointsLeft.position.x) | (dir.x > 0 && transform.position.x <= waypointsRight.position.x))
                 {
-                    transform.position = touchPosition;                    
-                }
+                    if (dir.x <= 1 && dir.x >= -1)
+                    {
+                        horizontalSpeed = 0.05f;
+                    }
+                    transform.Translate(dir.normalized * horizontalSpeed, Space.World);
+                    horizontalSpeed = 0.1f;
+                }   
             }
             
-            if (touch.phase == TouchPhase.Began) //check for the first touch
+
+            if(t.phase == TouchPhase.Began)
             {
-                fp = touch.position;
-                lp = touch.position;
+                firstPressPos = new Vector2(t.position.x,t.position.y);
             }
-            else if (touch.phase == TouchPhase.Moved) // update the last position based on where they moved
+            if(t.phase == TouchPhase.Ended)
             {
-                lp = touch.position;
-            }
-            else if (touch.phase == TouchPhase.Ended) //check if the finger is removed from the screen
-            {
-                lp = touch.position;  //last touch position. Ommitted if you use list
- 
-                //Check if drag distance is greater than 20% of the screen height
-                if (Mathf.Abs(lp.x - fp.x) > dragDistance || Mathf.Abs(lp.y - fp.y) > dragDistance)
-                {//It's a drag
-                 //check if the drag is vertical or horizontal
-                    if (Mathf.Abs(lp.x - fp.x) > Mathf.Abs(lp.y - fp.y))
-                    {   //If the horizontal movement is greater than the vertical movement...
-                        if ((lp.x > fp.x))  //If the movement was to the right)
-                        {   //Right swipe
-                            /*Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
-                            touchPosition.y = transform.position.y;
-                            touchPosition.z = 0f;
-                            if (touchPosition.x <= waypointsRight.position.x && touchPosition.x >= waypointsLeft.position.x)
-                            {
-                                transform.position = touchPosition;
-                            }*/
-                        }
-                        else
-                        {   //Left swipe
-                            /*Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
-                            touchPosition.y = transform.position.y;
-                            touchPosition.z = 0f;
-                            if (touchPosition.x <= waypointsRight.position.x && touchPosition.x >= waypointsLeft.position.x)
-                            {
-                                transform.position = touchPosition;
-                            }*/
-                        }
-                    }
-                    else
-                    {
-                        if (lp.y > fp.y)
-                        {   //Up swipe
-                            Attack();
-                        }
-                        else
-                        {   //Down swipe
-                            Debug.Log("Down Swipe");
-                        }
-                    }
+                secondPressPos = new Vector2(t.position.x,t.position.y);
+                currentSwipe = new Vector3(secondPressPos.x - firstPressPos.x, secondPressPos.y - firstPressPos.y);
+                
+                currentSwipe.Normalize();
+    
+                if(currentSwipe.y > 0  && currentSwipe.x > -0.5f  && currentSwipe.x < 0.5f)
+                {
+                    Attack();
                 }
-                else
-                {   //It's a tap as the drag distance is less than 20% of the screen height
-                    /*Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
-                    touchPosition.y = transform.position.y;
-                    touchPosition.z = 0f;
-                    if (touchPosition.x <= waypointsRight.position.x && touchPosition.x >= waypointsLeft.position.x)
-                    {
-                        transform.position = touchPosition;
-                    }*/
-                }
-            
             }
         }
     }
 
     private void Attack()
     {
-        if (isNotAttack)
+        if (!isAttack)
         {
             Debug.Log("Attack");
             StartCoroutine(AttackSpeed());
-            isNotAttack = false;
+            isAttack = true;            
         }
     }
-
+    
     public IEnumerator AttackSpeed()
     {
         float Aspeed = speed;
         speed = 6*Aspeed;
         while (transform.position.y <= CameraWaypoint.instance.transform.position.y + 2)
         {
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.001f);
         }
-        speed = Aspeed/6;
+        speed = -1;
         while (transform.position.y >= CameraWaypoint.instance.transform.position.y)
         {
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.001f);
         }
         speed = CameraWaypoint.instance.speed;
-        isNotAttack = true;
+        isAttack = false;
     }
 
-    public void StopVelocity()
+    public void StopPlayer()
     {
-        rb.velocity = Vector3.zero;
+        rigidbodyPlayer.velocity = Vector3.zero;
+        animator.ResetTrigger("GameStart");
     }
-    
-    
-    /*private void Update() 
-    {
-        Vector3 targetVelocity = new Vector2(0, speed);
-        rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .05f);
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
-            Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
-            touchPosition.y = transform.position.y;
-            touchPosition.z = 0f;
-            if (touchPosition.x <= waypointsRight.position.x && touchPosition.x >= waypointsLeft.position.x)
-            {
-                transform.position = touchPosition;
-            }
-
-            
-        }
-    }*/
 }
