@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2502032801802771408}
   m_Layer: 0
   m_Name: RockComposite
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toDestroy: {fileID: 6704451997849195394}
+  box: {fileID: 2502032801802771408}
   animator: {fileID: 6704451997849195420}
 --- !u!95 &6704451997849195420
 Animator:
@@ -169,7 +170,7 @@ PolygonCollider2D:
       - {x: 0.5154892, y: 0.21261561}
       - {x: 0.27422526, y: 0.22401269}
       - {x: 0.2803839, y: 0.40432012}
-      - {x: 0.08263177, y: 0.5618758}
+      - {x: 0.09678896, y: 0.5949093}
       - {x: -0.2830083, y: 0.60434735}
       - {x: -0.40352237, y: 0.4568697}
       - {x: -0.40879488, y: 0.28658426}

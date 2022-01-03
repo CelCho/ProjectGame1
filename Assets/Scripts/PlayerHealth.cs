@@ -41,24 +41,15 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDamage(1);
         }
-        else if (Input.GetKeyDown(KeyCode.B))
-        {
-            BonusHeartsPlayer();
-        }
-    }
-
-    public void BonusHeartsPlayer()
-    {
-        currentHealth = 3;
     }
 
     public void HealPlayer(int amount)
     {
-        if ((currentHealth + amount) > maxHealth)
+        if ((currentHealth + amount) == maxHealth)
         {
             currentHealth = maxHealth;
         }
-        else
+        else if ((currentHealth + amount) < maxHealth)
         {
             currentHealth += amount;
         }
@@ -68,18 +59,25 @@ public class PlayerHealth : MonoBehaviour
     {
         if (!isInvincible)
         {
-            currentHealth -= damage;
-
-            if (currentHealth <= 0)
+            if (PlayerEffects.instance.currentLifeShield <= 0)
             {
-                Die();
-                return;
-            }
+                currentHealth -= damage;
 
-            PlayerMovement.instance.isAttack = true;
-            isInvincible = true;
-            StartCoroutine(InvincibilityFlash());
-            StartCoroutine(HandleInvincibilityDelay());
+                PlayerMovement.instance.isAttack = true;
+                isInvincible = true;
+                StartCoroutine(InvincibilityFlash());
+                StartCoroutine(HandleInvincibilityDelay());
+
+                if (currentHealth <= 0)
+                {
+                    Die();
+                    return;
+                }
+            }
+            else
+            {
+                PlayerEffects.instance.currentLifeShield -= 1;
+            }
         }
     }
 
@@ -96,15 +94,6 @@ public class PlayerHealth : MonoBehaviour
         Inventory.instance.SaveScoreMax();
         Game.instance.SaveData();
         Game.instance.GameStop();
-    }
-
-    public void Respawn()
-    {
-        /*PlayerMovement.instance.enabled = true;
-        PlayerMovement.instance.animator.SetTrigger("Respawn");
-        PlayerMovement.instance.rb.bodyType = RigidbodyType2D.Dynamic;
-        PlayerMovement.instance.playerCollider.enabled = true;
-        currentHealth = maxHealth;*/
     }
 
     public IEnumerator InvincibilityFlash()

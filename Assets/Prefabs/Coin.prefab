@@ -98,11 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toDestroy: {fileID: 4926852253843087026}
-  positions:
-  - {x: -3, y: 4.7, z: 0}
-  - {x: 3, y: 2.7, z: 0}
-  - {x: -3, y: -2.7, z: 0}
-  - {x: 3, y: -4.7, z: 0}
 --- !u!95 &4926852253843087039
 Animator:
   serializedVersion: 3
@@ -137,4 +132,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.00000047683716}
   serializedVersion: 2
-  m_Radius: 0.26162672
+  m_Radius: 0.28057504

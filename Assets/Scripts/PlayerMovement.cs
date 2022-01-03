@@ -84,24 +84,57 @@ public class PlayerMovement : MonoBehaviour
     
                 if(currentSwipe.y > 0  && currentSwipe.x > -0.5f  && currentSwipe.x < 0.5f)
                 {
-                    Attack();
+                    StartCoroutine(Attack());
                 }
             }
         }
     }
 
-    public void Attack()
+    public IEnumerator Attack()
     {
         if (canAttack)
         {
             Debug.Log("Attack");
-            StartCoroutine(AttackSpeed());
             isAttack = true;
             canAttack = false;
+            Vector3 newPos = transform.position;
+            newPos.y = CameraWaypoint.instance.transform.position.y + 0.5f;
+            transform.position = newPos;
+            yield return new WaitForSeconds(0.05f);
+            newPos.y = CameraWaypoint.instance.transform.position.y + 1;
+            transform.position = newPos;
+            yield return new WaitForSeconds(0.1f);
+            newPos.y = CameraWaypoint.instance.transform.position.y + 2;
+            transform.position = newPos;
+            yield return new WaitForSeconds(0.05f);
+            newPos.y = CameraWaypoint.instance.transform.position.y + 1.5f;
+            transform.position = newPos;
+            yield return new WaitForSeconds(0.05f);
+            newPos.y = CameraWaypoint.instance.transform.position.y + 1;
+            transform.position = newPos;
+            yield return new WaitForSeconds(0.05f);
+            newPos.y = CameraWaypoint.instance.transform.position.y + 0.5f;
+            transform.position = newPos;
+            yield return new WaitForSeconds(0.05f);
+            newPos.y = CameraWaypoint.instance.transform.position.y;
+            transform.position = newPos;
+            isAttack = false;
+            canAttack = true;
         }
     }
+
+    public void ButtonAttack()
+    {
+        StartCoroutine(Attack());
+    }
+
+    public void StopPlayer()
+    {
+        rigidbodyPlayer.velocity = Vector3.zero;
+        animator.ResetTrigger("GameStart");
+    }
     
-    public IEnumerator AttackSpeed()
+    /*public IEnumerator AttackSpeed()
     {
         float Aspeed = speed;
         speed = 6*Aspeed;
@@ -117,11 +150,5 @@ public class PlayerMovement : MonoBehaviour
         speed = CameraWaypoint.instance.speed;
         isAttack = false;
         canAttack = true;
-    }
-
-    public void StopPlayer()
-    {
-        rigidbodyPlayer.velocity = Vector3.zero;
-        animator.ResetTrigger("GameStart");
-    }
+    }*/
 }

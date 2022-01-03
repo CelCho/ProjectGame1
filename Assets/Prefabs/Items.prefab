@@ -149,7 +149,8 @@ MonoBehaviour:
   goldenApple: {fileID: 11400000, guid: 12e39c7b8966e09419c864a346e1c6b2, type: 2}
   item: {fileID: 11400000, guid: 8f7203e638def44488c700551ab190f3, type: 2}
   shield: {fileID: 11400000, guid: 288edf2b827b57d40b09393c299e4fde, type: 2}
-  positions: []
+  positions:
+  - {x: 0, y: 0, z: 0}
   animator: {fileID: 7354150566931838905}
   toDestroy: {fileID: 7354150566931838902}
 --- !u!95 &7354150566931838905

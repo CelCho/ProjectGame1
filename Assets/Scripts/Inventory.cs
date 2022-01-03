@@ -33,19 +33,20 @@ public class Inventory : MonoBehaviour
     
     public void ConsumeItem(Item currentItem)
     {   
-        if (currentItem.hpGiven == 3)
+        if (currentItem.hpGiven == 3 && currentItem.hpShield != 0)
         {
-            PlayerHealth.instance.BonusHeartsPlayer();
+            playerEffects.Shield(currentItem);
         }
         else
         {
             PlayerHealth.instance.HealPlayer(currentItem.hpGiven);
         }
-        playerEffects.AddSpeed(currentItem.speedGiven, currentItem.speedDuration);
+
         if (currentItem.timeInvinsible != 0)
         {
             StartCoroutine(playerEffects.InvinsiblePlayer(currentItem.timeInvinsible));
         }
+        playerEffects.AddSpeed(currentItem.speedGiven, currentItem.speedDuration);
         nbBonus += 1;
     }
 
@@ -59,7 +60,7 @@ public class Inventory : MonoBehaviour
 
     public void AddScore()
     {
-        score =  Mathf.FloorToInt(PlayerHealth.instance.transform.position.y) + 6;
+        score =  Mathf.FloorToInt(CameraWaypoint.instance.transform.position.y);
         UpdateTextUI();
     }
     
@@ -79,6 +80,6 @@ public class Inventory : MonoBehaviour
     public void UpdateTextUI()
     {
         scoreText.text = score.ToString();
-        coinsCountText.text = coinsCountTotal.ToString();
+        coinsCountText.text = coinsCount.ToString();
     }
 }

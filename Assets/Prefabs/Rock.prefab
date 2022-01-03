@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2502032801802771408}
   m_Layer: 0
   m_Name: Rock
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toDestroy: {fileID: 6704451997849195394}
+  box: {fileID: 2502032801802771408}
   animator: {fileID: 6704451997849195420}
 --- !u!95 &6704451997849195420
 Animator:
@@ -150,7 +151,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -165,13 +166,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.063659295, y: 0.646819}
-      - {x: -0.49064723, y: 0.64681894}
-      - {x: -0.8125, y: 0.33439726}
-      - {x: -0.81454605, y: 0.037862238}
-      - {x: -0.744028, y: -0.1522805}
-      - {x: -0.5295696, y: -0.55722445}
-      - {x: 0.21736448, y: -0.5731266}
-      - {x: 0.7040434, y: -0.3591732}
-      - {x: 0.7087589, y: -0.04299964}
-      - {x: 0.7156366, y: -0.046360195}
+    - - {x: -0.5000782, y: 0.65625}
+      - {x: -0.80778444, y: 0.33439726}
+      - {x: -0.80697644, y: 0.037255503}
+      - {x: -0.6916302, y: -0.35198194}
+      - {x: -0.50599223, y: -0.5336469}
+      - {x: 0.45385918, y: -0.5245834}
+      - {x: 0.7606295, y: -0.3403112}
+      - {x: 0.7559645, y: -0.032593727}
+      - {x: 0.36924252, y: 0.34367174}
+      - {x: -0.062421754, y: 0.65625}

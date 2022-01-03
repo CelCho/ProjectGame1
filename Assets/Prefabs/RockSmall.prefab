@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2502032801802771408}
   m_Layer: 0
   m_Name: RockSmall
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toDestroy: {fileID: 6704451997849195394}
+  box: {fileID: 2502032801802771408}
   animator: {fileID: 6704451997849195420}
 --- !u!95 &6704451997849195420
 Animator:

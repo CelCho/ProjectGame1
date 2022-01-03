@@ -36,7 +36,7 @@ public class Game : MonoBehaviour
 
     public void RecupData()
     {
-        Inventory.instance.coinsCount = PlayerPrefs.GetInt("coinsCount", 0);
+        Inventory.instance.coinsCountTotal = PlayerPrefs.GetInt("coinsCount", 0);
         Inventory.instance.scoreMax = PlayerPrefs.GetFloat("scoreMax", 0);
         Inventory.instance.UpdateTextUI();
         PauseMenu.instance.UpdateTextUI();
@@ -44,7 +44,7 @@ public class Game : MonoBehaviour
 
     public void SaveData()
     {
-        PlayerPrefs.SetInt("coinsCount", Inventory.instance.coinsCount);
+        PlayerPrefs.SetInt("coinsCount", Inventory.instance.coinsCountTotal);
         PlayerPrefs.SetFloat("scoreMax", Inventory.instance.scoreMax);
     }
 
