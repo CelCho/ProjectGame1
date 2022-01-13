@@ -23,7 +23,7 @@ public class CameraFollow : MonoBehaviour
     }
     void Update()
     {
-        if (PlayerMovement.instance.transform.position.x>=-35 &&PlayerMovement.instance.transform.position.x<=35)
+        if (PlayerMovement.instance.transform.position.x>=-35 && PlayerMovement.instance.transform.position.x<=35)
         {
             posOffset.x = PlayerMovement.instance.transform.position.x;
         }

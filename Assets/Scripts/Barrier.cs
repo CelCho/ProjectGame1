@@ -36,7 +36,7 @@ public class Barrier : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player"))
         {
-            if (PlayerMovement.instance.isAttack)
+            if (PlayerMovement.instance.isAttack | PlayerHealth.instance.isInvincible)
             {
                 Inventory.instance.nbBarrier += 1;
                 animator.SetTrigger("Crach");
@@ -46,8 +46,9 @@ public class Barrier : MonoBehaviour
                 PlayerHealth playerHealth = collision.transform.GetComponent<PlayerHealth>();
                 playerHealth.TakeDamage(1);
             }
+            StartCoroutine(BoxEnabled());
         }
-        if (collision.CompareTag("GroundCheck"))
+        else if (collision.CompareTag("GroundCheck"))
         {
             Die();
         }
@@ -56,7 +57,7 @@ public class Barrier : MonoBehaviour
     private IEnumerator BoxEnabled() 
     {
         box.enabled = false;
-        while (transform.position.y + 3 >= PlayerMovement.instance.transform.position.y)
+        while (transform.position.y >= PlayerMovement.instance.transform.position.y - 3)
         {
              yield return new WaitForSeconds(0.01f);
         }

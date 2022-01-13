@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf1fa38ad546c2f40a166d312e2cb939, type: 3}
+  m_Name: Apple
+  m_EditorClassIdentifier: 
+  id: 1
+  Name: Apple
+  description: give 1 heart
+  nivMax: 10
+  niv: 1
+  price: 50
+  image: {fileID: 7293598183456022363, guid: 2e0dcfd29422c0741878e3bf00cdbc6e, type: 3}
+  hpGiven: 1
+  hpShield: 0
+  timeInvinsible: 0
+  timeEffect: 0
+  speedGiven: 0
+  speedDuration: 0

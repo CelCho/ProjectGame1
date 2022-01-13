@@ -50,7 +50,6 @@ public class GameOverManager : MonoBehaviour
     public void RetryButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        PlayerHealth.instance.Respawn();
         Game.instance.GameStart();
         gameOverUI.SetActive(false);
     }

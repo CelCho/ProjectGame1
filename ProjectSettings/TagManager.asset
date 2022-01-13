@@ -9,6 +9,8 @@ TagManager:
   - Wall
   - Up
   - GroundCheck
+  - Rock
+  - Tree
   layers:
   - Default
   - TransparentFX
