@@ -78,6 +78,10 @@ public class Enemy : MonoBehaviour
                 StartCoroutine(Attack());
             }
         }
+        else if (collision.transform.CompareTag("BoxSword") && PlayerMovement.instance.isAttack)
+        {
+            StartCoroutine(Die());
+        }
         else if (collision.transform.CompareTag("Barrier") | collision.transform.CompareTag("Rock") | collision.transform.CompareTag("Tree"))
         {
             canTranslate = false;

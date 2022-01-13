@@ -47,6 +47,9 @@ TextureImporter:
   - first:
       213: 7751623360170982062
     second: Grass5
+  - first:
+      213: 1863712917396688099
+    second: BarrierVertical
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -470,6 +473,27 @@ TextureImporter:
       bones: []
       spriteID: eaa7c9f406c439b60800000000000000
       internalID: 7751623360170982062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarrierVertical
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 68
+        width: 13
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ec8cb4260d3dd910800000000000000
+      internalID: 1863712917396688099
       vertices: []
       indices: 
       edges: []

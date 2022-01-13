@@ -130,9 +130,9 @@ TextureImporter:
       name: PlayerSprintInvisible_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 0
-        width: 12
+        width: 16
         height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -151,9 +151,9 @@ TextureImporter:
       name: PlayerSprintInvisible_1
       rect:
         serializedVersion: 2
-        x: 18
+        x: 16
         y: 0
-        width: 12
+        width: 16
         height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -172,9 +172,9 @@ TextureImporter:
       name: PlayerSprintInvisible_2
       rect:
         serializedVersion: 2
-        x: 34
+        x: 32
         y: 0
-        width: 12
+        width: 16
         height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -193,9 +193,9 @@ TextureImporter:
       name: PlayerSprintInvisible_3
       rect:
         serializedVersion: 2
-        x: 50
+        x: 48
         y: 0
-        width: 12
+        width: 16
         height: 18
       alignment: 0
       pivot: {x: 0, y: 0}

@@ -11,6 +11,7 @@ TagManager:
   - GroundCheck
   - Rock
   - Tree
+  - BoxSword
   layers:
   - Default
   - TransparentFX

@@ -97,27 +97,33 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Attack");
             isAttack = true;
             canAttack = false;
+
+            animator.SetTrigger("Attack");
+            float posyplus = 0f;
             Vector3 newPos = transform.position;
-            newPos.y = CameraWaypoint.instance.transform.position.y + 0.5f;
-            transform.position = newPos;
-            yield return new WaitForSeconds(0.05f);
-            newPos.y = CameraWaypoint.instance.transform.position.y + 1;
-            transform.position = newPos;
-            yield return new WaitForSeconds(0.1f);
+            for (int j = 0; j < 6; j++)
+            {
+                newPos = transform.position;
+                newPos.y = CameraWaypoint.instance.transform.position.y + posyplus;
+                transform.position = newPos;
+                yield return new WaitForSeconds(0.05f);
+                posyplus += 0.25f;
+            }
+            newPos = transform.position;
             newPos.y = CameraWaypoint.instance.transform.position.y + 2;
             transform.position = newPos;
-            yield return new WaitForSeconds(0.05f);
-            newPos.y = CameraWaypoint.instance.transform.position.y + 1.5f;
-            transform.position = newPos;
-            yield return new WaitForSeconds(0.05f);
-            newPos.y = CameraWaypoint.instance.transform.position.y + 1;
-            transform.position = newPos;
-            yield return new WaitForSeconds(0.05f);
-            newPos.y = CameraWaypoint.instance.transform.position.y + 0.5f;
-            transform.position = newPos;
-            yield return new WaitForSeconds(0.05f);
-            newPos.y = CameraWaypoint.instance.transform.position.y;
-            transform.position = newPos;
+            yield return new WaitForSeconds(0.4f);
+            for (int i = 0; i < 7; i++)
+            {
+                newPos = transform.position;
+                newPos.y = CameraWaypoint.instance.transform.position.y + posyplus;
+                transform.position = newPos;
+                yield return new WaitForSeconds(0.05f);
+                posyplus -= 0.25f;
+            }
+            animator.ResetTrigger("Attack");
+            newPos = transform.position;
+            newPos.y = CameraWaypoint.instance.transform.position.y - 1;
             isAttack = false;
             canAttack = true;
         }
