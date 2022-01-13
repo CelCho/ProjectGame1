@@ -48,6 +48,11 @@ public class Barrier : MonoBehaviour
             }
             StartCoroutine(BoxEnabled());
         }
+        else if (collision.transform.CompareTag("BoxSword") && PlayerMovement.instance.isAttack)
+        {
+            Inventory.instance.nbBarrier += 1;
+            animator.SetTrigger("Crach");
+        }
         else if (collision.CompareTag("GroundCheck"))
         {
             Die();

@@ -18,7 +18,7 @@ MonoBehaviour:
   nivMax: 10
   niv: 1
   price: 120
-  image: {fileID: -5402412272178277761, guid: a7c9c6f594e389e4d89e8f670637cac3, type: 3}
+  image: {fileID: -6717884257390833292, guid: 0d940018c34186e408cc13f2520a39d8, type: 3}
   hpGiven: 3
   hpShield: 1
   timeInvinsible: 0
