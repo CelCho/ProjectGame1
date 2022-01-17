@@ -1065,7 +1065,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &6456044292193103043
@@ -1231,6 +1231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6456044292288303114}
   - component: {fileID: 6456044292288303117}
+  - component: {fileID: 2922485902565967541}
   m_Layer: 0
   m_Name: Slide4
   m_TagString: Wall
@@ -1289,6 +1290,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &2922485902565967541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6456044292288303119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ba40795f842e444880f511c887378c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 1954d177946d80a468e8421f468573fc, type: 2}
+  animatorsSlide:
+  - {fileID: 5918591394258794676}
+  - {fileID: 6456044293855997622}
+  - {fileID: 6456044293160469049}
+  - {fileID: 1549463695891722887}
 --- !u!1 &6456044292315421131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1389,6 +1408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6456044292582882449}
   - component: {fileID: 6456044292582882478}
+  - component: {fileID: 5918591394258794676}
   m_Layer: 0
   m_Name: BackGround
   m_TagString: Untagged
@@ -1461,6 +1481,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5918591394258794676
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6456044292582882448}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: def7d11f458e1e84ca4b2100f7db1442, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6456044292958982409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1577,7 +1616,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &6456044293160469051
@@ -1762,7 +1801,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &6456044293306918225
@@ -1801,6 +1840,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6456044293414831837}
   - component: {fileID: 6456044293414831834}
+  - component: {fileID: 1549463695891722887}
   m_Layer: 0
   m_Name: BackGround (1)
   m_TagString: Untagged
@@ -1873,6 +1913,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1549463695891722887
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6456044293414831836}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: def7d11f458e1e84ca4b2100f7db1442, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6456044293477617188
 GameObject:
   m_ObjectHideFlags: 0
@@ -2035,7 +2094,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &6456044293673682123

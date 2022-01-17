@@ -377,8 +377,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "<SIZE=200><B>Project Game 1</B>\r\n</SIZE>\r\n<SIZE=70>Suite du titre,
-    oui j\u2019ai pas d\u2019id\xE9e</SIZE>\r\n\r\n\r\n\n<SIZE=160><B>ASSETS  USED</B>\r\n</SIZE>\r\n\r\n<SIZE=120>-
+  m_Text: "<SIZE=160f><B>Euphemia</B>\r\n</SIZE>\r\n<SIZE=70>Suite du titre, oui
+    j\u2019ai pas d\u2019id\xE9e</SIZE>\r\n\r\n\r\n\n<SIZE=160><B>ASSETS  USED</B>\r\n</SIZE>\r\n\r\n<SIZE=120>-
     GRAPHICS -</SIZE>\r\n\r\n\r\n<SIZE=60>LOGO GAME\r\n<I>BY KASUKI</I></SIZE>\r\n\r\n\r\n<SIZE=60>PROPS\r\n<I>BY 
     CEL</I></SIZE>\r\n\r\n\r\n\r\n<SIZE=120>- AUDIO -</SIZE>\r\n\r\n\r\n<SIZE=60>HERO 
     IMMORTAL\r\n<I>BY  TREVOR  LENTZ</I></SIZE>\r\n\r\n<SIZE=60>BOB'S  ADVENTURES 

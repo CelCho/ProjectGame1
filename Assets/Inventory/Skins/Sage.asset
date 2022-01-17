@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad83951714bd28b46804f46d4078a7b6, type: 3}
+  m_Name: Sage
+  m_EditorClassIdentifier: 
+  id: 3
+  Name: Sage
+  description: Sage
+  price: 500
+  image: {fileID: -6127215198058392024, guid: 666766a5d1496b445a5304dda031aa8b, type: 3}
+  IsBuy: 0

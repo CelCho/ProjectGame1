@@ -4,16 +4,16 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    public Data data;
+
     public string levelToLoad;
 
-    public GameObject startPanel;
+    public GameObject homePage;
     public GameObject settingsWindow;
     public GameObject ShopWindow;
-    
-    public int coinsCount;
-    public Text coinsCountText;
+    public GameObject MissionsWindow;
 
-    public float scoreMax;
+    public Text coinsCountText;
     public Text scoreMaxText;
 
     public static MainMenu instance;
@@ -31,20 +31,25 @@ public class MainMenu : MonoBehaviour
 
     private void Start() 
     {
-        coinsCount = PlayerPrefs.GetInt("coinsCount", 0);
-        scoreMax = PlayerPrefs.GetFloat("scoreMax", 0);
+        data.LoadData();
         UpdateInventory();
     }
 
     public void UpdateInventory()
     {
-        coinsCountText.text = coinsCount.ToString();
-        scoreMaxText.text = scoreMax.ToString();
+        coinsCountText.text = data.coins.ToString();
+        scoreMaxText.text = data.hightScore.ToString();
     }
 
     public void StartGame()
     {
+        if (data.mission1InProgress.activate)
+        {
+            data.mission1InProgress.finish = true;
+            data.nbNotifMissions += 1;
+        }
         SceneManager.LoadScene(levelToLoad);
+        data.SaveData();
     }
 
     public void SettingsButton()
@@ -54,15 +59,15 @@ public class MainMenu : MonoBehaviour
 
     public void OpenShopPanel()
     {
-        startPanel.SetActive(false);
+        homePage.SetActive(false);
         ShopWindow.SetActive(true);
     }
 
     public void CloseShopPanel()
     {
-        startPanel.SetActive(true);
+        homePage.SetActive(true);
         ShopWindow.SetActive(false);
-        PlayerPrefs.SetInt("coinsCount", coinsCount);
+        data.SaveData();
     }
 
     public void CloseSettingsWindow()
@@ -73,10 +78,5 @@ public class MainMenu : MonoBehaviour
     public void LoadCreditsScene()
     {
         SceneManager.LoadScene("Credits");
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
     }
 }

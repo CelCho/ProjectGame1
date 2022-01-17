@@ -92,6 +92,7 @@ public class PlayerHealth : MonoBehaviour
         CameraWaypoint.instance.StopVelocity();
         GameOverManager.instance.OnPlayerDeath();
         Inventory.instance.SaveScoreMax();
+        Inventory.instance.nbDie += 1;
         Game.instance.SaveData();
         Game.instance.GameStop();
     }

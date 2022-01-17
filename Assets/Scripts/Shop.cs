@@ -3,112 +3,117 @@ using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
-    public bool isAItem;
-    public Item item;
+    public bool isAScene;
+    public Scenes scene;
 
     public bool isASkin;
     public Skin skin;
+
+    public bool isATrails;
+    public Trails trails;
 
     public Text nameShop;
     public Image image;
     public Text price;
 
-    public Slider slider;
-    public Gradient gradient;
-    public Image fill;
-
-    public GameObject toDestroy;
+    public GameObject priceObject;
+    public GameObject buy;
+    public GameObject select;
 
     private void Start() 
     {
-        if (isAItem)
+        if (isAScene)
         {
-            nameShop.text = item.Name;
-            image.sprite = item.image;
-            price.text = item.price.ToString();
-
-            SetMaxNiv(item.nivMax);
-            SetNiv(item.niv);
+            nameShop.text = scene.Name;
+            image.sprite = scene.image;
+            price.text = scene.price.ToString();
+            if (scene.isBuy)
+            {
+                ChangeButtonBuy();
+            }
         }
         else if (isASkin)
         {
             nameShop.text = skin.Name;
             image.sprite = skin.image;
             price.text = skin.price.ToString();
+            if (skin.isBuy)
+            {
+                ChangeButtonBuy();
+            }
+        }
+        else if (isATrails)
+        {
+            nameShop.text = trails.Name;
+            image.sprite = trails.image;
+            price.text = trails.price.ToString();
+            if (trails.isBuy)
+            {
+                ChangeButtonBuy();
+            }
         }
     }
 
     public void Buy()
     {
-        if (isAItem)
+        if (isAScene)
         {
-            if ((MainMenu.instance.coinsCount - item.price) >= 0 && item.niv < item.nivMax)
+            if (! scene.isBuy && (MainMenu.instance.data.coins - scene.price) >= 0)
             {
-                MainMenu.instance.coinsCount -= item.price;
+                MainMenu.instance.data.coins -= scene.price;
 
-                ModifItem();
+                scene.isBuy = true;
 
-                if (item.niv == item.nivMax)
-                {
-                    Destroy(toDestroy);
-                }
-
-                SetNiv(item.niv);
-                price.text = item.price.ToString();
-                MainMenu.instance.UpdateInventory();
-            }    
+                ChangeButtonBuy();
+                MainMenu.instance.data.SaveData();
+            }
+            else if (scene.isBuy)
+            {
+                MainMenu.instance.data.idScene = scene.id;
+                MainMenu.instance.data.SaveData();
+            }
         }
         else if (isASkin)
         {
-            if ((MainMenu.instance.coinsCount - skin.price) >= 0)
+            if (! skin.isBuy && (MainMenu.instance.data.coins - skin.price) >= 0)
             {
-                MainMenu.instance.coinsCount -= skin.price;
+                MainMenu.instance.data.coins -= skin.price;
 
-                skin.IsBuy = true;
+                skin.isBuy = true;
 
-                Destroy(toDestroy);
+                ChangeButtonBuy();
+                MainMenu.instance.data.SaveData();
+            }
+            else if (skin.isBuy)
+            {
+                MainMenu.instance.data.idSkin = skin.id;
+                MainMenu.instance.data.SaveData();
             }
         }
+        else if (isATrails)
+        {
+            if (! trails.isBuy && (MainMenu.instance.data.coins - trails.price) >= 0)
+            {
+                MainMenu.instance.data.coins -= trails.price;
+
+                trails.isBuy = true;
+
+                ChangeButtonBuy();
+                MainMenu.instance.data.SaveData();
+            }
+            else if (trails.isBuy)
+            {
+                MainMenu.instance.data.idTrails = trails.id;
+                MainMenu.instance.data.SaveData();
+            }
+        }
+
     }
 
-    public void ModifItem()
+    public void ChangeButtonBuy()
     {
-        item.niv += 1;
-        item.price += 50;
-        if (item.timeInvinsible != 0)
-        {
-            item.timeInvinsible += 5;
-        }
-        if (item.timeEffect != 0)
-        {
-            item.timeEffect += 5;
-        }
-        if (item.speedGiven != 0)
-        {
-            item.speedGiven += 1;
-        }
-        if (item.speedDuration != 0)
-        {
-            item.speedDuration += 5;
-        }
-        if (item.hpShield != 0)
-        {
-            item.hpShield += 0.5f;
-        }
-    }
-
-    public void SetMaxNiv(int niv)
-    {
-        slider.maxValue = niv;
-        slider.value = niv;
-
-        fill.color = gradient.Evaluate(1f);
-    }
-
-    public void SetNiv(int niv)
-    {
-        slider.value = niv;
-
-        fill.color = gradient.Evaluate(slider.normalizedValue);
+        priceObject.SetActive(false);
+        buy.SetActive(false);
+        select.SetActive(true);
     }
 }

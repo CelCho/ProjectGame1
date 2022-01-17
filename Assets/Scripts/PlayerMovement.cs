@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public bool canAttack = true;
     public Animator animator;
 
+    public Data data;
+
     public Transform waypointsRight;
     public Transform waypointsLeft;
 
@@ -33,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         instance = this;
+        
+        animator.SetInteger("IdSkin", data.idSkin);
     }
     
     private void Start()
@@ -99,32 +103,10 @@ public class PlayerMovement : MonoBehaviour
             canAttack = false;
 
             animator.SetTrigger("Attack");
-            float posyplus = 0f;
-            Vector3 newPos = transform.position;
-            for (int j = 0; j < 6; j++)
-            {
-                newPos = transform.position;
-                newPos.y = CameraWaypoint.instance.transform.position.y + posyplus;
-                transform.position = newPos;
-                yield return new WaitForSeconds(0.05f);
-                posyplus += 0.25f;
-            }
-            newPos = transform.position;
-            newPos.y = CameraWaypoint.instance.transform.position.y + 2;
-            transform.position = newPos;
-            yield return new WaitForSeconds(0.4f);
-            for (int i = 0; i < 7; i++)
-            {
-                newPos = transform.position;
-                newPos.y = CameraWaypoint.instance.transform.position.y + posyplus;
-                transform.position = newPos;
-                yield return new WaitForSeconds(0.05f);
-                posyplus -= 0.25f;
-            }
-            animator.ResetTrigger("Attack");
-            newPos = transform.position;
-            newPos.y = CameraWaypoint.instance.transform.position.y - 1;
+            yield return new WaitForSeconds(0.8f);
             isAttack = false;
+            yield return new WaitForSeconds(0.7f);
+            animator.ResetTrigger("Attack");
             canAttack = true;
         }
     }

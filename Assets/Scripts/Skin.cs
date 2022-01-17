@@ -8,5 +8,5 @@ public class Skin : ScriptableObject
     public string description;
     public int price;
     public Sprite image;
-    public bool IsBuy;
+    public bool isBuy;
 }

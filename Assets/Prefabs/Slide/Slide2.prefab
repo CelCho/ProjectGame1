@@ -420,6 +420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6710628693490338490}
   - component: {fileID: 6710628693490338493}
+  - component: {fileID: 495165094213530623}
   m_Layer: 0
   m_Name: BackGround (1)
   m_TagString: Untagged
@@ -492,6 +493,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &495165094213530623
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6710628693490338491}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: def7d11f458e1e84ca4b2100f7db1442, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6710628693513882575
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,7 +591,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &6710628693549267759
@@ -723,6 +743,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6710628693941879461}
   - component: {fileID: 6710628693941879458}
+  - component: {fileID: 4477307551215831408}
   m_Layer: 0
   m_Name: Slide2
   m_TagString: Wall
@@ -779,6 +800,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &4477307551215831408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6710628693941879456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ba40795f842e444880f511c887378c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 1954d177946d80a468e8421f468573fc, type: 2}
+  animatorsSlide:
+  - {fileID: 7938303203206897643}
+  - {fileID: 6710628693591762120}
+  - {fileID: 6710628694144739910}
+  - {fileID: 495165094213530623}
 --- !u!1 &6710628694093896206
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,7 +899,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &6710628694093896195
@@ -1365,6 +1404,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6710628695343801159}
   - component: {fileID: 6710628695343801158}
+  - component: {fileID: 7938303203206897643}
   m_Layer: 0
   m_Name: BackGround
   m_TagString: Untagged
@@ -1437,6 +1477,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7938303203206897643
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6710628695343801156}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: def7d11f458e1e84ca4b2100f7db1442, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6710628695449134416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,7 +1576,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &6710628695449134418
@@ -1626,7 +1685,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &6710628695458777087

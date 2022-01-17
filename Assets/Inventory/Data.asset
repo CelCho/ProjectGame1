@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc58b818ff73c9d4f81e38228b7fe1f7, type: 3}
+  m_Name: Data
+  m_EditorClassIdentifier: 
+  coins: 1558
+  hightScore: 0
+  nbNotifMissions: 1
+  nbKillMoob: 0
+  nbBarrier: 0
+  nbBonus: 0
+  nbDie: 0
+  idSkin: 1
+  idScene: 1
+  idTrails: 1
+  mission1InProgress: {fileID: 11400000, guid: 41fe94b5911098344ac81574b77f0516, type: 2}
+  allMissions:
+  - {fileID: 11400000, guid: 41fe94b5911098344ac81574b77f0516, type: 2}
+  - {fileID: 11400000, guid: 9fe0eba51d699214ba1c1bc4d1e68f3b, type: 2}

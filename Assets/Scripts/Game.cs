@@ -6,6 +6,8 @@ using System.IO;
 
 public class Game : MonoBehaviour
 {
+    public Data data;
+    
     public GameObject[] slides;
     public GameObject startButton;
 
@@ -36,16 +38,21 @@ public class Game : MonoBehaviour
 
     public void RecupData()
     {
-        Inventory.instance.coinsCountTotal = PlayerPrefs.GetInt("coinsCount", 0);
-        Inventory.instance.scoreMax = PlayerPrefs.GetFloat("scoreMax", 0);
+        Inventory.instance.coinsCountTotal = data.coins;
+        Inventory.instance.scoreMax = data.hightScore;
         Inventory.instance.UpdateTextUI();
         PauseMenu.instance.UpdateTextUI();
     }
 
     public void SaveData()
     {
-        PlayerPrefs.SetInt("coinsCount", Inventory.instance.coinsCountTotal);
-        PlayerPrefs.SetFloat("scoreMax", Inventory.instance.scoreMax);
+        data.coins = Inventory.instance.coinsCountTotal;
+        data.hightScore = Inventory.instance.scoreMax;
+        data.nbBarrier += Inventory.instance.nbBarrier;
+        data.nbBonus += Inventory.instance.nbBonus;
+        data.nbKillMoob += Inventory.instance.nbKillMoob;
+        data.nbDie += Inventory.instance.nbDie;
+        data.SaveData();
     }
 
     public void GameStart()

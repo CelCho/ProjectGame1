@@ -584,6 +584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7866746317521437870}
   - component: {fileID: 7866746317521437871}
+  - component: {fileID: 5907562873898526194}
   m_Layer: 0
   m_Name: Slide1
   m_TagString: Wall
@@ -639,6 +640,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &5907562873898526194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7866746317521437869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ba40795f842e444880f511c887378c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 1954d177946d80a468e8421f468573fc, type: 2}
+  animatorsSlide:
+  - {fileID: 1301713823771503915}
+  - {fileID: 7866746317934286903}
+  - {fileID: 7866746319095308512}
+  - {fileID: 3121222487129127109}
 --- !u!1 &7866746317609737211
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,7 +738,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &7866746317609737205
@@ -829,7 +848,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &7866746317645547138
@@ -951,7 +970,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &7866746317663388734
@@ -1092,6 +1111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7866746317935792576}
   - component: {fileID: 7866746317935792579}
+  - component: {fileID: 1301713823771503915}
   m_Layer: 0
   m_Name: BackGround
   m_TagString: Untagged
@@ -1164,6 +1184,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1301713823771503915
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7866746317935792577}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: def7d11f458e1e84ca4b2100f7db1442, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7866746318533851528
 GameObject:
   m_ObjectHideFlags: 0
@@ -1206,6 +1245,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7866746318779891563}
   - component: {fileID: 7866746318779891562}
+  - component: {fileID: 3121222487129127109}
   m_Layer: 0
   m_Name: BackGround (1)
   m_TagString: Untagged
@@ -1278,6 +1318,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3121222487129127109
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7866746318779891560}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: def7d11f458e1e84ca4b2100f7db1442, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7866746318829896716
 GameObject:
   m_ObjectHideFlags: 0
@@ -1496,7 +1555,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &7866746319167789908

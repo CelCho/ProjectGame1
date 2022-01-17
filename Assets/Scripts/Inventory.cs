@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
+    public int nbDie;
     public int nbKillMoob;
     public int nbBarrier;
     public int nbBonus;
