@@ -21,7 +21,7 @@
     },
     {
       "Annotation": "Il2Cpp /Users/matlecher/Documents/GitHub/ProjectGame1/Library/Il2cppBuildCache/iOS/il2cppOutput/Data/Metadata/global-metadata.dat",
-      "Action": "\"/Applications/Unity/Hub/Editor/2020.3.24f1/Unity.app/Contents/il2cpp/build/deploy/netcoreapp3.1/il2cpp\" --convert-to-cpp --emit-null-checks --enable-array-bounds-check --dotnetprofile=\"unityaot\" --additional-cpp=\"/Users/matlecher/Documents/GitHub/ProjectGame1/Library/Il2cppBuildCache/iOS/additionalCppFiles/UnityClassRegistration.cpp\" --additional-cpp=\"/Users/matlecher/Documents/GitHub/ProjectGame1/Library/Il2cppBuildCache/iOS/additionalCppFiles/UnityICallRegistration.cpp\" --incremental-g-c-time-slice=3 --avoid-dynamic-library-copy --profiler-report --map-file-parser=\"/Applications/Unity/Hub/Editor/2020.3.24f1/Unity.app/Contents/Tools/MapFileParser/MapFileParser\" --directory=\"/Users/matlecher/Documents/GitHub/ProjectGame1/Temp/StagingArea/Data/Managed\" --generatedcppdir=\"/Users/matlecher/Documents/GitHub/ProjectGame1/Library/Il2cppBuildCache/iOS/il2cppOutput\" --stats-output-dir=\"/Users/matlecher/Documents/GitHub/ProjectGame1/Library/Il2cppBuildCache/iOS/il2cppStats\"",
+      "Action": "\"/Applications/Unity/Hub/Editor/2020.3.26f1/Unity.app/Contents/il2cpp/build/deploy/netcoreapp3.1/il2cpp\" --convert-to-cpp --emit-null-checks --enable-array-bounds-check --dotnetprofile=\"unityaot\" --additional-cpp=\"/Users/matlecher/Documents/GitHub/ProjectGame1/Library/Il2cppBuildCache/iOS/additionalCppFiles/UnityClassRegistration.cpp\" --additional-cpp=\"/Users/matlecher/Documents/GitHub/ProjectGame1/Library/Il2cppBuildCache/iOS/additionalCppFiles/UnityICallRegistration.cpp\" --incremental-g-c-time-slice=3 --avoid-dynamic-library-copy --profiler-report --map-file-parser=\"/Applications/Unity/Hub/Editor/2020.3.26f1/Unity.app/Contents/Tools/MapFileParser/MapFileParser\" --directory=\"/Users/matlecher/Documents/GitHub/ProjectGame1/Temp/StagingArea/Data/Managed\" --generatedcppdir=\"/Users/matlecher/Documents/GitHub/ProjectGame1/Library/Il2cppBuildCache/iOS/il2cppOutput\" --stats-output-dir=\"/Users/matlecher/Documents/GitHub/ProjectGame1/Library/Il2cppBuildCache/iOS/il2cppStats\"",
       "Inputs": [
         "/Users/matlecher/Documents/GitHub/ProjectGame1/Temp/StagingArea/Data/Managed",
         "/Users/matlecher/Documents/GitHub/ProjectGame1/Temp/StagingArea/Data/Managed/Assembly-CSharp.dll",
@@ -37,6 +37,7 @@
         "/Users/matlecher/Documents/GitHub/ProjectGame1/Temp/StagingArea/Data/Managed/UnityEngine.GridModule.dll",
         "/Users/matlecher/Documents/GitHub/ProjectGame1/Temp/StagingArea/Data/Managed/UnityEngine.IMGUIModule.dll",
         "/Users/matlecher/Documents/GitHub/ProjectGame1/Temp/StagingArea/Data/Managed/UnityEngine.InputLegacyModule.dll",
+        "/Users/matlecher/Documents/GitHub/ProjectGame1/Temp/StagingArea/Data/Managed/UnityEngine.ParticleSystemModule.dll",
         "/Users/matlecher/Documents/GitHub/ProjectGame1/Temp/StagingArea/Data/Managed/UnityEngine.Physics2DModule.dll",
         "/Users/matlecher/Documents/GitHub/ProjectGame1/Temp/StagingArea/Data/Managed/UnityEngine.PhysicsModule.dll",
         "/Users/matlecher/Documents/GitHub/ProjectGame1/Temp/StagingArea/Data/Managed/UnityEngine.SharedInternalsModule.dll",
@@ -47,7 +48,7 @@
         "/Users/matlecher/Documents/GitHub/ProjectGame1/Temp/StagingArea/Data/Managed/UnityEngine.UIModule.dll",
         "/Users/matlecher/Documents/GitHub/ProjectGame1/Temp/StagingArea/Data/Managed/UnityEngine.dll",
         "/Users/matlecher/Documents/GitHub/ProjectGame1/Temp/StagingArea/Data/Managed/mscorlib.dll",
-        "\"/Applications/Unity/Hub/Editor/2020.3.24f1/Unity.app/Contents/il2cpp/build/deploy/netcoreapp3.1/il2cpp\""
+        "\"/Applications/Unity/Hub/Editor/2020.3.26f1/Unity.app/Contents/il2cpp/build/deploy/netcoreapp3.1/il2cpp\""
       ],
       "Outputs": [
         "/Users/matlecher/Documents/GitHub/ProjectGame1/Library/Il2cppBuildCache/iOS/il2cppOutput/Data/Metadata/global-metadata.dat"
