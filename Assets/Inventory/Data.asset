@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc58b818ff73c9d4f81e38228b7fe1f7, type: 3}
   m_Name: Data
   m_EditorClassIdentifier: 
-  coins: 1558
-  hightScore: 0
+  coins: 28100
+  hightScore: 33
   nbNotifMissions: 1
   nbKillMoob: 0
   nbBarrier: 0
   nbBonus: 0
-  nbDie: 0
-  idSkin: 1
-  idScene: 1
+  nbDie: 6
+  idSkin: 5
+  idScene: 2
   idTrails: 1
-  mission1InProgress: {fileID: 11400000, guid: 41fe94b5911098344ac81574b77f0516, type: 2}
+  mission1InProgress: {fileID: 11400000, guid: 9fe0eba51d699214ba1c1bc4d1e68f3b, type: 2}
   allMissions:
   - {fileID: 11400000, guid: 41fe94b5911098344ac81574b77f0516, type: 2}
   - {fileID: 11400000, guid: 9fe0eba51d699214ba1c1bc4d1e68f3b, type: 2}
